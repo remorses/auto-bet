@@ -1,2 +1,0 @@
-# auto-bet
-Automate bets 
