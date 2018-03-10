@@ -24,52 +24,6 @@
       ]
     },
     {
-      "site": "betfair",
-      "metadata": {
-        "tournament": "tournament name",
-        "matchName": "match name",
-        "date": "date",
-        "time": "time"
-      },
-      "odds": [
-        {
-          "type": "outcome",
-          "role": "home",
-          "player": "player name A",
-          "value": 2.54
-        },
-        {
-          "type": "outcome",
-          "role": "away",
-          "player": "player name B",
-          "value": 1.4
-        }
-      ]
-    },
-    {
-      "site": "betfair",
-      "metadata": {
-        "tournament": "tournament name",
-        "matchName": "match name",
-        "date": "date",
-        "time": "time"
-      },
-      "odds": [
-        {
-          "type": "outcome",
-          "role": "home",
-          "player": "player name A",
-          "value": 2.54
-        },
-        {
-          "type": "outcome",
-          "role": "away",
-          "player": "player name B",
-          "value": 1.4
-        }
-      ]
-    },
-    {
       "site": "unibet",
       "metadata": {
         "tournament": "tournament name",
@@ -82,446 +36,229 @@
           "type": "outcome",
           "role": "home",
           "player": "player name A",
-          "value": 2.54
+          "value": 1
         },
         {
           "type": "outcome",
           "role": "away",
           "player": "player name B",
-          "value": 1.4
-        }
-      ]
-    },
-    {
-      "site": "unibet",
-      "metadata": {
-        "tournament": "tournament name",
-        "matchName": "match name",
-        "date": "date",
-        "time": "time"
-      },
-      "odds": [
-        {
-          "type": "outcome",
-          "role": "home",
-          "player": "player name A",
-          "value": 2.54
-        },
-        {
-          "type": "outcome",
-          "role": "away",
-          "player": "player name B",
-          "value": 1.4
-        }
-      ]
-    },
-    {
-      "site": "betfair",
-      "metadata": {
-        "tournament": "tournament name",
-        "matchName": "match name",
-        "date": "date",
-        "time": "time"
-      },
-      "odds": [
-        {
-          "type": "outcome",
-          "role": "home",
-          "player": "player name A",
-          "value": 2.54
-        },
-        {
-          "type": "outcome",
-          "role": "away",
-          "player": "player name B",
-          "value": 1.4
+          "value": 3
         }
       ]
     }
   ],
   "grouperQueue": [
-    [
-      {
-        "metadata": {
-          "tournament": "tournament name",
-          "matchName": "match name",
-          "date": "date",
-          "time": "time"
-        },
-        "bets": [
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "unibet",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          }
-        ]
+    {
+      "metadata": {
+        "tournament": "tournament name",
+        "matchName": "match name",
+        "date": "date",
+        "time": "time"
       },
-      {
-        "metadata": {
-          "tournament": "tournament name",
-          "matchName": "match name",
-          "date": "date",
-          "time": "time"
-        },
-        "bets": [
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
+      "bets": [
+        {
+          "site": "betfair",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
           },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "home",
-              "player": "player name A",
-              "value": 2.54
-            }
-          },
-          {
-            "site": "betfair",
-            "metadata": {
-              "tournament": "tournament name",
-              "matchName": "match name",
-              "date": "date",
-              "time": "time"
-            },
-            "odd": {
-              "type": "outcome",
-              "role": "away",
-              "player": "player name B",
-              "value": 1.4
-            }
+          "odd": {
+            "type": "outcome",
+            "role": "home",
+            "player": "player name A",
+            "value": 2.54
           }
-        ]
-      }
-    ]
+        },
+        {
+          "site": "betfair",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "away",
+            "player": "player name B",
+            "value": 1.4
+          }
+        },
+        {
+          "site": "unibet",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "home",
+            "player": "player name A",
+            "value": 1
+          }
+        },
+        {
+          "site": "unibet",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "away",
+            "player": "player name B",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "tournament": "tournament name",
+        "matchName": "match name",
+        "date": "date",
+        "time": "time"
+      },
+      "bets": [
+        {
+          "site": "unibet",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "home",
+            "player": "player name A",
+            "value": 1
+          }
+        },
+        {
+          "site": "unibet",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "away",
+            "player": "player name B",
+            "value": 3
+          }
+        },
+        {
+          "site": "betfair",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "home",
+            "player": "player name A",
+            "value": 2.54
+          }
+        },
+        {
+          "site": "betfair",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "away",
+            "player": "player name B",
+            "value": 1.4
+          }
+        }
+      ]
+    }
   ],
-  "placerQueue": []
+  "placerQueue": [
+    {
+      "profit": 0.27296587926509197,
+      "bets": [
+        {
+          "site": "betfair",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "home",
+            "player": "player name A",
+            "value": 2.54
+          }
+        },
+        {
+          "site": "unibet",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "away",
+            "player": "player name B",
+            "value": 3
+          }
+        }
+      ]
+    },
+    {
+      "profit": 0.27296587926509197,
+      "bets": [
+        {
+          "site": "betfair",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "home",
+            "player": "player name A",
+            "value": 2.54
+          }
+        },
+        {
+          "site": "unibet",
+          "metadata": {
+            "tournament": "tournament name",
+            "matchName": "match name",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "outcome",
+            "role": "away",
+            "player": "player name B",
+            "value": 3
+          }
+        }
+      ]
+    }
+  ]
 }

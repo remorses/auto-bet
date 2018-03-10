@@ -18,7 +18,7 @@ const selectors = {
 
 
 
-module.exports = {
+export  {
   config,
   selectors,
 }

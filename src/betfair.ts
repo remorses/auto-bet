@@ -1,12 +1,11 @@
-import puppeteer from  'puppeteer'
-import {config, selectors} from "./config/betfair"
+import { Page } from 'puppeteer'
+import { config, selectors } from "./config/betfair"
+import { Match, Metadata, Odd, } from "./interfaces"
 
-async function run() {
-  const browser = await puppeteer.launch({headless: false});
-  const page = await browser.newPage();
 
-  //await page.setCookie(...cookies);
-  await page.goto(config.loginUrl, {waitUntil: 'networkidle2'});
+async function scrape(page: Page): Promise<Match[]> {
+
+  await page.goto(config.loginUrl, { waitUntil: 'networkidle2' });
 
   /*
   // sign in
@@ -21,25 +20,25 @@ async function run() {
   */
 
   // go to tennis
-  await page.goto(config.tennisUrl, {waitUntil: 'networkidle2'});
+  await page.goto(config.tennisUrl, { waitUntil: 'networkidle2' });
 
   // scrape
   const data = await page.evaluate(() => {
 
-  function getText(el) {
-    return el
-      ? el.textContent.trim()
-      : null
-  }
-  function getNumber(el) {
-    let string = el.textContent
-    return string
-      ? parseFloat(string.trim())
-      : null
-  }
+    function getText(el) {
+      return el
+        ? el.textContent.trim()
+        : null
+    }
+    function getNumber(el) {
+      let string = el.textContent
+      return string
+        ? parseFloat(string.trim())
+        : null
+    }
 
 
-    const data = []
+    const data: Match[] = []
 
     let rows = Array.from(document.querySelectorAll('div#zone-main li > ul > li'))
 
@@ -63,28 +62,15 @@ async function run() {
 
       let match = {
         site: "betfair",
-        tournaent: null,
-        date: date,
-        time: time,
-        home: {
-          team: homeTeam,
-          odd: homeOdd
-        },
-        away: {
-          team: awayTeam,
-          odd: awayOdd
-        }
+        metadata,
+        odds: [odd, odd, odd]
       }
-      data.push(match)
+
+      return data
 
     }
-
-    return data
-
   })
 
-
+  return data
 
 }
-
-run();
