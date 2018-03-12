@@ -11,7 +11,7 @@ interface Odd {
   role: string,
   player: string,
   value: number,
-  selector: string
+  //selector: string
   // aggiungere link per la scommessa
 }
 // a match with only a single odd, used to placeBet in the final stage and managed
