@@ -41,6 +41,10 @@ async-limiter@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
 
+async-parallel@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/async-parallel/-/async-parallel-1.2.3.tgz#0b90550aeffb7a365d8cee881eb0618f656a3450"
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
