@@ -12,7 +12,9 @@
     "js-combinatorics": "^0.5.3",
     "lodash": "^4.17.5",
     "lowdb": "^1.0.0",
-    "puppeteer": "^1.1.0"
+    "mobx": "^4.1.0",
+    "puppeteer": "^1.1.0",
+    "rxjs": "^5.5.7"
   },
   "devDependencies": {
     "@types/node": "^9.4.6"

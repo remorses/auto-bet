@@ -1,5 +1,6 @@
 // data about the match, should be about the same among all sites
 interface Metadata {
+  sport: string, // 'calcio',  'tennis'
   tournament: string,
   matchName: string,
   date: string,
@@ -7,12 +8,11 @@ interface Metadata {
 }
 // the all data that is needed to compute a surebet given a GroupMatch
 interface Odd {
-  type: string,
-  role: string,
-  player: string,
-  value: number,
-  //selector: string
-  // aggiungere link per la scommessa
+  type: string,    // 'payoff[1,2]'   'payoff[1,x,2]'  'underOver[+2.5,-2.5]'    'corners[+3,-2]'   'corners[-2,+1]'  nei corners la somma fa 1
+  role: string,   // '1', 'x', '2'
+  player: string, // 'Genoa',  'Real Madrid'
+  value: number,   // 1.45
+  link: string  // 'https://www.unibet.it/'
 }
 // a match with only a single odd, used to placeBet in the final stage and managed
 // from the grouper to find
