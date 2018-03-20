@@ -165,12 +165,8 @@ async function scrapeUrls({ page, day, state, tournament }): Promise<string[]> {
   await resolveIf(serieA).then((a) => a.click())
 
   // get the links of matches
-<<<<<<< HEAD
   // await page.waitFor(2 * 1000);
   await waitForLoad(page)
-=======
-  await page.waitFor(2 * 1000);
->>>>>>> e9aa99c77fa95cf13dc43c865989c71e69f60f9d
   const domaniTable = await findParentElement({
     page,
     content: day,
@@ -204,7 +200,6 @@ function whenUpdated(page) {
 }
 
 
-<<<<<<< HEAD
 // invece di waitFor
 const waitForLoad = (page) => new Promise((resolve) => {
   page.on('rquest', (req) => {
@@ -215,13 +210,10 @@ const waitForLoad = (page) => new Promise((resolve) => {
   })
 })
 
-=======
->>>>>>> e9aa99c77fa95cf13dc43c865989c71e69f60f9d
 async function scrapeMatch({ browser, url, type }) {
   const page = await browser.newPage();
   await page.goto(url);
 
-<<<<<<< HEAD
 
   whenUpdated(page)
 
@@ -233,21 +225,13 @@ async function scrapeMatch({ browser, url, type }) {
 
   // await page.waitFor(2 * 1000);
   await waitForLoad(page)
-=======
-  await page.waitFor(2 * 1000);
-  await page.waitForSelector("div#zone-rightcolumn a:nth-child(3)").then(a => a.click())
->>>>>>> e9aa99c77fa95cf13dc43c865989c71e69f60f9d
   const matchTable = await findParentElement({
     page,
     content: type,
     child: " span.title",
     parent: "div#zone-rightcolumn > div > div > div> div> div> div> div> div> div:not(.filters).list-minimarkets > div > div"
   }).catch(logger("error")) // TODO, undefined
-<<<<<<< HEAD
   console.log("matchTable", !!matchTable) // TODO solo esistenza
-=======
-   console.log("matchTable", !!matchTable) // TODO solo esistenza
->>>>>>> e9aa99c77fa95cf13dc43c865989c71e69f60f9d
 
 
   "div#zone-rightcolumn div:nth-child(35) > div > div.minimarketview-header > div > div > div > span.title-icon-container > span"
@@ -255,18 +239,13 @@ async function scrapeMatch({ browser, url, type }) {
 
   console.log("arrivato dopo matchTable")
   // get the players in an array of three
-<<<<<<< HEAD
   // await page.waitFor(2 * 1000);
   await waitForLoad(page)
-=======
-  await page.waitFor(2 * 1000);
->>>>>>> e9aa99c77fa95cf13dc43c865989c71e69f60f9d
   const players: string[] = await getChildContent({
     page,
     parent: matchTable,
     selector: " span.runner-name"
   }).then(logger("players, before parse")).catch(logger("error")) // TODO niente, array vuoto
-<<<<<<< HEAD
 
 
 
@@ -285,26 +264,6 @@ async function scrapeMatch({ browser, url, type }) {
         selector: "div.minimarketview-content.ui-market.ui-expanded.ui-market-open > ul > li > span.ui-runner-handicap"
       }).then(parseChildren)
     */
-=======
-
-
-
-    // get the odds, in an array
-    const odds: string[] = await getChildren({
-      page,
-      element: <any>matchTable,
-      selector: "ul > li > a > span.ui-runner-price"
-    }).then(parseChildren).then(logger("odds, with getChildren"))
-
-/*
-    // get the odd types ( handicap value)
-    const handicapTypes: string[] = await getChildren({
-      page,
-      element: <any>matchTable,
-      selector: "div.minimarketview-content.ui-market.ui-expanded.ui-market-open > ul > li > span.ui-runner-handicap"
-    }).then(parseChildren)
-  */
->>>>>>> e9aa99c77fa95cf13dc43c865989c71e69f60f9d
   return
 
 }
@@ -342,7 +301,6 @@ async function scrapeMatch({ browser, url, type }) {
     state: "UEFA Europa League",
     tournament: "UEFA Europa League"
   })
-<<<<<<< HEAD
 
   /*
 await Promise.all(urls.map(url => scrapeMatch({
@@ -350,24 +308,11 @@ await Promise.all(urls.map(url => scrapeMatch({
   url,
   type: "Handicap calci d'angolo"
 })))
-=======
-  /*
-  // prendere le quote delle scommesse e inserirle nel database
-  await Promise.all(urls.map(url => scrapeMatch({
-    browser,
-    url,
-    type: "Handicap calci d'angolo"
-  })))
->>>>>>> e9aa99c77fa95cf13dc43c865989c71e69f60f9d
 */
   await scrapeMatch({
     browser,
     url: urls[0],
-<<<<<<< HEAD
     type: "Rigore Si/No"
-=======
-    type: "Primo Goal"
->>>>>>> e9aa99c77fa95cf13dc43c865989c71e69f60f9d
   })
 
   // await browser.close()
