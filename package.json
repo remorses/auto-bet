@@ -7,6 +7,7 @@
     "@types/js-combinatorics": "^0.5.29",
     "@types/lowdb": "^1.0.0",
     "@types/puppeteer": "^1.0.1",
+    "assert": "^1.4.1",
     "async-parallel": "^1.2.3",
     "fs": "^0.0.1-security",
     "js-combinatorics": "^0.5.3",
