@@ -7,7 +7,7 @@ import * as Parallel from "async-parallel"
 // invece di waitFor
 const waitForLoad = (page: Page) => new Promise((resolve) => {
   page.on('request', (req) => {
-    setTimeout(() => resolve("timeOut"), 300)
+    setTimeout(() => resolve("timeOut"), 500)
   })
   setTimeout(() => resolve("timeOut"), 2500)
 })

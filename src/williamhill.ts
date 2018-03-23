@@ -41,11 +41,11 @@ await page.click(selectors.submitLogin);
 async function scrapeUrls({ page, site, day, state, tournament }: { page: Page, site, day, state, tournament }): Promise<string[]> {
   // go to football
   await page.goto(site);
-  await waitForLoad(page)
-  // await page.waitFor(2000)
+   await waitForLoad(page)
+  // await page.waitForNavigation({waitUntil: "domcontentloaded"})
 
   await page.waitForSelector("#popupClose").then(a => a.click())
-
+  await waitForLoad(page)
   // find right state container
   const stateTable = await findParentElement({
     page,
@@ -54,6 +54,8 @@ async function scrapeUrls({ page, site, day, state, tournament }: { page: Page, 
     parent: "#contentA > div.listContainer > ul > li "
   })
 
+
+  await waitForLoad(page)
   // find the right tournament button and click
   let tournamentButton
   const tournamentButtons = await stateTable.$$("ul > li > a")
@@ -63,15 +65,22 @@ async function scrapeUrls({ page, site, day, state, tournament }: { page: Page, 
     }
   }
   await resolveIf(tournamentButton).then((a) => a.click())
+  await page.waitForNavigation({ waitUntil: "domcontentloaded" })
 
+  "div#tup_type_1_mkt_grps tr"
+  "td:nth-child(1) > span"
+  "td:nth-child(3) > a > span"
 
   // get the links of matches
-  await waitForLoad(page)
-  let links
+  // await waitForLoad(page)
+  let links = []
   const allMatches = await page.$$("div#tup_type_1_mkt_grps tr ")
   for (let match of allMatches) {
+    if (!match) continue
     const date = await match.$("td:nth-child(1) > span")
     const link = await match.$("td:nth-child(3) > a")
+    if (!date || !link) continue
+    console.log(await getContent(date))
     if (await getContent(date) === day) links.push(link)
   }
   const hrefs: string[] = await Promise.all(links.map(link => link.getProperty("href").then(href => href.jsonValue())))
@@ -98,7 +107,8 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
   // whenUpdated(page)
 
   await page.waitForSelector("div#zone-rightcolumn a:nth-child(3).market-link").then(a => a.click())
-  await waitForLoad(page)
+  // await waitForLoad(page)
+  await page.waitForNavigation({ waitUntil: "domcontentloaded" })
 
   await Promise.all(types.map(async (type: string) => {
 
@@ -110,7 +120,8 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
       parent: "div#zone-rightcolumn > div > div > div> div> div> div> div> div> div:not(.filters).list-minimarkets > div > div"
     }).catch(logger("error")) // TODO, undefined
     console.log("matchTable", !!matchTable) // TODO solo esistenza
-    await waitForLoad(page)
+    // await waitForLoad(page)
+
 
 
     // get the players in an array of three
@@ -184,7 +195,7 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
   const urls: string[] = await scrapeUrls({
     page,
     site: "http://sports.williamhill.it/bet_ita/it/betting/y/5/et/Calcio.html",
-    day: "giovedì, 05 aprile",
+    day: "31 Mar",
     state: "Italia",
     tournament: "Serie A"
   })
