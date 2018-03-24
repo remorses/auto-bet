@@ -9,12 +9,13 @@ import * as assert from "assert"
 const float = (val) => typeof val === "string" ? parseFloat(val.trim()) : val
 
 
-function oddsConstructor({ players, type, oddValues, roles, url }) {
+function oddsConstructor({ players, type, oddValues, roles, url }: { players?: string[] | null[], type, oddValues, roles?: string[], url }) {
   let odds: Odd[] = []
-  if (!players) players = [null, null, null]
+  if (!players) players = [null, null, null,]
 
   // 2 odds
   if (oddValues.length === 2) {
+    if (!roles) roles = ["1", "2"]
     const odd1 = {
       type: rawToPure("oddType", type),
       role: roles[0],
@@ -36,6 +37,7 @@ function oddsConstructor({ players, type, oddValues, roles, url }) {
 
   // 3 odds
   if (oddValues.length === 3) {
+    if (!roles) roles = ["1", "x", "2"]
     const odd1 = {
       type: rawToPure("oddType", type),
       role: roles[0],

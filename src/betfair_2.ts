@@ -6,7 +6,7 @@ import * as Parallel from "async-parallel"
 import { when, observable, action, reaction } from "mobx"
 import { Observable, Subject } from "rxjs"
 import { oddsConstructor } from "./oddsConstructor"
-import {  rawToPure } from "./aliases"
+import { rawToPure } from "./aliases"
 import {
   getAttribute,
   logger,
@@ -149,6 +149,7 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
       time: "time",
     }
     console.log(type)
+
     const odds = oddsConstructor({ players, type, oddValues, url })
 
     const match = {
@@ -190,8 +191,8 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
     tournament: "UEFA Europa League"
   })
 
-  const matches: Match[][] = await Promise.all(urls.map( url =>
-     scrapeMatch({
+  const matches: Match[][] = await Promise.all(urls.map(url =>
+    scrapeMatch({
       browser,
       url,
       types: ["Rimborso in Caso di Pareggio"]

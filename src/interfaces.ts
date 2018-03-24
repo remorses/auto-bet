@@ -10,7 +10,7 @@ interface Metadata {
 interface Odd {
   type: string,    // 'payoff[1,2]'   'payoff[1,x,2]'  'underOver[+2.5,-2.5]'    'corners[+3,-2]'   'corners[-2,+1]'  nei corners la somma fa 1
   role: string,   // '1', 'x', '2'
-  player: string, // 'Genoa',  'Real Madrid'
+  player: string | null, // 'Genoa',  'Real Madrid'
   value: number,   // 1.45
   link: string  // 'https://www.unibet.it/'
 }
