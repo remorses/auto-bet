@@ -3,7 +3,6 @@
 //
 import { Match, Metadata, Odd, } from "./interfaces"
 import { rawToPure } from "./aliases"
-import * as assert from "assert"
 
 
 const float = (val) => typeof val === "string" ? parseFloat(val.trim()) : val

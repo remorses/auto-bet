@@ -25,19 +25,6 @@ import {
 
 
 
-/*
-// await page.goto(config.loginUrl, { waitUntil: 'networkidle2' });
-
-// sign in
-await page.waitForSelector(selectors.usernameField);
-await page.click(selectors.usernameField)
-await page.keyboard.type(config.username)
-await page.waitForSelector(selectors.passwordField);
-await page.click(selectors.passwordField)
-await page.keyboard.type(config.password)
-await page.waitForSelector(selectors.submitLogin);
-await page.click(selectors.submitLogin);
-*/
 async function scrapeUrls({ page, site, day, state, tournament }: { page: Page, site, day, state, tournament }): Promise<string[]> {
   // go to football
   await page.goto(site);
