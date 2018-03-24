@@ -13,12 +13,6 @@ const equalMatches = (...matches: Match[]): boolean => {
   return equalMetadatas(...metadatas)
 }
 
-
-
-
-
-
-
 // group by site, from a queue of general matches, Array<Match>
 //  Match[] => Array<Match[]>
 const groupBySite = (sites: string[], ...matches: Match[]): Array<Match[]> => {

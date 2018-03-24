@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    /* Basic Options */
     "target": "esnext",
     "module": "commonjs",
-    "lib": ["dom", "es2016", "esnext"],
+    "lib": ["dom", "esnext"],
     "allowJs": true,
     "outDir": "./lib",
     "rootDir": "./src",
