@@ -41,7 +41,7 @@ await page.click(selectors.submitLogin);
 async function scrapeUrls({ page, site, day, state, tournament }: { page: Page, site, day, state, tournament }): Promise<string[]> {
   // go to football
   await page.goto(site);
-   await waitForLoad(page)
+  await waitForLoad(page)
   // await page.waitForNavigation({waitUntil: "domcontentloaded"})
 
   await page.waitForSelector("#popupClose").then(a => a.click())
@@ -73,7 +73,7 @@ async function scrapeUrls({ page, site, day, state, tournament }: { page: Page, 
 
   // get the links of matches
   // await waitForLoad(page)
-  let links = []
+  let links: ElementHandle[] = []
   const allMatches = await page.$$("div#tup_type_1_mkt_grps tr ")
   for (let match of allMatches) {
     if (!match) continue
@@ -100,48 +100,73 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
 
   const page = await browser.newPage();
   await page.goto(url);
+  await waitForLoad(page)
+
+
+  await page.$("a#collection25Show").then(a => a ? a.click() : null)
+  await page.$("a#collection26Show").then(a => a ? a.click() : null)
+  await page.$("a#collection178Show").then(a => a ? a.click() : null)
+  await waitForLoad(page)
+
+
 
   let matches: Match[] = []
-  // await waitForLoad(page)
-
-  // whenUpdated(page)
-
-  await page.waitForSelector("div#zone-rightcolumn a:nth-child(3).market-link").then(a => a.click())
-  // await waitForLoad(page)
-  await page.waitForNavigation({ waitUntil: "domcontentloaded" })
-
   await Promise.all(types.map(async (type: string) => {
+
+
+
+
+    "div#primaryCollectionContainer div:nth-child(12) > table > thead > tr > th > span"
+    "div#primaryCollectionContainer div:nth-child(12) > table > tbody > tr > td:nth-child(1) > div > div.eventselection"
+    "div#primaryCollectionContainer div:nth-child(12) > table > tbody > tr > td:nth-child(2) > div > div.eventselection"
 
 
     const matchTable = await findParentElement({
       page,
       content: type,
-      child: " span.title",
-      parent: "div#zone-rightcolumn > div > div > div> div> div> div> div> div> div:not(.filters).list-minimarkets > div > div"
+      child: "  table > thead > tr > th > span",
+      parent: "div#primaryCollectionContainer  div.marketHolderExpanded "
     }).catch(logger("error")) // TODO, undefined
     console.log("matchTable", !!matchTable) // TODO solo esistenza
     // await waitForLoad(page)
 
 
 
-    // get the players in an array of three
-    const players: string[] = await getChildContent({
-      page,
-      parent: matchTable,
-      selector: " span.runner-name"
-    }).then(logger("players, before parse")).catch(logger("error")) // TODO niente, array vuoto
 
-    const tournament: string = await page.$("div#zone-leftcolumn div:nth-child(1) > div > div > div > a > span")
-      .then(a => a ? getContent(a) : "Error")
+
+    const tournament: string = await page.$("ul#breadcrumb li:nth-child(4) > a")
+      .then(resolveIf)
+      .then(getContent)
 
 
     // get the odds, in an array
     const oddValues: number[] = await getChildren({
       page,
       element: matchTable,
-      selector: "ul > li > a > span.ui-runner-price"
-    }).then(parseChildren).then(a => a.map(t => parseFloat(t.trim())))
+      selector: "table > tbody > tr > td > div > div.eventprice"
+    }).then(parseChildren)//.then(a => a.map(t => parseFloat(t.trim())))
       .then(logger("odds, with getChildren"))
+
+    /*
+        // get the odds, in an array
+        const players: number[] = await getChildren({
+          page,
+          element: <any>page,
+          selector: "div#contentHead > h2"
+        }).then(parseChildren)
+          .then(arr => arr.map(s => s.split("-")))
+          .then(arr => arr.slice(0, -1))
+          .then(logger("players, with getChildren"))
+          */
+
+    const players = await page.$("div#contentHead > h2")
+      .then(resolveIf)
+      .then(a => getContent(a))
+      .then(s => s.split("-"))
+      .then(arr => arr.slice(0, -1))
+      .then(arr => arr.map(s => s.trim()))
+
+
 
     /*
         // get the odd types ( handicap value)
@@ -163,7 +188,7 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
     const odds = oddsConstructor({ players, type, oddValues, url })
 
     const match = {
-      site: "betfair",
+      site: "williamhill",
       metadata,
       odds
     }
@@ -199,24 +224,26 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
     state: "Italia",
     tournament: "Serie A"
   })
+  /*
+    const matches: Match[][] = await Promise.all(urls.map(url =>
+      scrapeMatch({
+        browser,
+        url,
+        types: ["Over/Under 2.5 Goal"]
+      }))
+    )
+    */
 
-  const matches: Match[][] = await Promise.all(urls.map(url =>
-    scrapeMatch({
-      browser,
-      url,
-      types: ["Rimborso in Caso di Pareggio"]
-    }))
-  )
+
+
+  const matches: Match[] = await scrapeMatch({
+    browser,
+    url: urls[0],
+    types: ["Over/Under 2.5 Goal"]
+  })
 
   console.log(JSON.stringify(matches))
 
-  /*
-    await scrapeMatch({
-      browser,
-      url: urls[0],
-      types: ["Rigore Si/No", "Primo Goal"]
-    })
-    */
 
   // await browser.close()
 })()

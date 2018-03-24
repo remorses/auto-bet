@@ -112,7 +112,7 @@ const findElement = async ({ page, content, selector }: { page: Page, content: s
 
 const getContent = async (element: ElementHandle): Promise<string> => {
   if (!element) throw new Error("no element where get the content")
-  return await (await element.getProperty("innerHTML")).jsonValue()
+  return (await (await element.getProperty("innerHTML")).jsonValue()).trim()
 }
 
 const parseChildren = (arr: ElementHandle[]) => {

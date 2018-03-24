@@ -2,7 +2,7 @@
 // un array di odds,
 //
 import { Match, Metadata, Odd, } from "./interfaces"
-import { getAliasType, rawToPure } from "./aliases"
+import {  rawToPure } from "./aliases"
 import * as assert from "assert"
 
 function oddsConstructor({ players, type, oddValues, url }) {
@@ -12,7 +12,7 @@ function oddsConstructor({ players, type, oddValues, url }) {
   // 2 odds
   if (oddValues.length === 2) {
     const odd1 = {
-      type: rawToPure(type),
+      type: rawToPure("oddType", type),
       role: "1",
       player: players[0],
       value: oddValues[0],
@@ -20,7 +20,7 @@ function oddsConstructor({ players, type, oddValues, url }) {
 
     }
     const odd2 = {
-      type: rawToPure(type),
+      type: rawToPure("oddType", type),
       role: "2",
       player: players[1],
       value: oddValues[1],
@@ -33,7 +33,7 @@ function oddsConstructor({ players, type, oddValues, url }) {
   // 3 odds
   if (oddValues.length === 3) {
     const odd1 = {
-      type: rawToPure(type),
+      type: rawToPure("oddType", type),
       role: "1",
       player: players[0],
       value: oddValues[0],
@@ -41,14 +41,14 @@ function oddsConstructor({ players, type, oddValues, url }) {
 
     }
     const oddx = {
-      type: rawToPure(type),
+      type: rawToPure("oddType", type),
       role: "x",
       player: "none",
       value: oddValues[1],
       link: url
     }
     const odd2 = {
-      type: rawToPure(type),
+      type: rawToPure("oddType", type),
       role: "2",
       player: players[1],
       value: oddValues[2],

@@ -1,28 +1,26 @@
 
+// system to convert the nomenclature of sites to pure
 
 
-const oddTypes = {
-  "underOver_2.5": [{ betfair: "Più/Meno" }],
-  "rimborso pareggio": [{ betfair: "Rimborso in Caso di Pareggio" }]
+
+const aliases = {
+  oddType: {
+    "underOver_2.5": [{ betfair: "Più/Meno", williamhill: "Over/Under 2.5 Goal" }],
+    "rimborso pareggio": [{ betfair: "Rimborso in Caso di Pareggio" }]
+  },
+  tournament: {}
 }
 
+type Category = "oddType" | "tournament";
 
-const tournaments = {
-
-}
-
-
-
-
-const rawToPure = (raw: string): string => {
-  for (let [group, arr] of Object.entries(oddTypes)) {
+const rawToPure = (category: Category, raw: string): string => {
+  for (let [group, arr] of Object.entries(aliases[category])) {
     for (let value of Object.values(group)) {
-      if (value === raw) return value
+      if (value === raw.trim()) return value
     }
   }
   return raw
 }
 
 
-
-export {  rawToPure }
+export { rawToPure }
