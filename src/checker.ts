@@ -1,4 +1,4 @@
-import { Match, GroupMatch, Bet, Odd, Metadata, Surebet } from "./interfaces"
+import { Match, GroupMatch, Bet, Odd, Metadata, Surebet } from "@src/interfaces"
 import { cartesianProduct } from "js-combinatorics"
 import * as low from "lowdb"
 import * as FileSync from 'lowdb/adapters/FileSync'

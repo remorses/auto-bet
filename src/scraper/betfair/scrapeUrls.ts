@@ -1,7 +1,7 @@
 
 import { Page, ElementHandle, JSHandle, Browser, Request, Response } from 'puppeteer'
-import { Match, Metadata, Odd, } from "../interfaces"
-import { oddsConstructor } from "../oddsConstructor"
+import { Match, Metadata, Odd, } from "@src/interfaces"
+import { oddsConstructor } from "@scraper/oddsConstructor"
 import {
   getAttribute,
   logger,
@@ -16,8 +16,7 @@ import {
   getChildren,
   findElement,
   abortMediaRequests
-} from "../helpers"
-
+} from "@scraper/helpers"
 
 
 async function scrapeUrls({ page, site, day, state, tournament }: { page: Page, site, day, state, tournament }): Promise<string[]> {
