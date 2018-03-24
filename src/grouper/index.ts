@@ -1,4 +1,3 @@
-import * as fs from "fs"
 import * as low from "lowdb"
 import * as FileSync from 'lowdb/adapters/FileSync'
 import { Match, GroupMatch, Bet, Odd, Metadata, Surebet } from "@src/interfaces"
