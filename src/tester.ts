@@ -1,8 +1,7 @@
 
 
 
-import * as puppeteer from "puppeteer";
-import { Page } from 'puppeteer'
+import { Page, launch } from 'puppeteer'
 
 interface waiterArg {
   page: any,
@@ -19,7 +18,7 @@ const waiter = async ({ page, site, time = 0 }: waiterArg) => {
 
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await launch();
   const pageA = await browser.newPage();
   const pageB = await browser.newPage();
   const pageC = await browser.newPage();
