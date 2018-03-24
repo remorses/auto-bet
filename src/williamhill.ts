@@ -147,6 +147,15 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
     }).then(parseChildren)//.then(a => a.map(t => parseFloat(t.trim())))
       .then(logger("odds, with getChildren"))
 
+
+
+    // get the odd roles (handicap value, under or over...)
+    const roles: string[] = await getChildren({
+      page,
+      element: <any>matchTable,
+      selector: "table > tbody > tr > td:nth-child(1) > div > div.eventselection"
+    }).then(parseChildren)
+
     /*
         // get the odds, in an array
         const players: number[] = await getChildren({
@@ -168,14 +177,8 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
 
 
 
-    /*
-        // get the odd types ( handicap value)
-        const handicapTypes: string[] = await getChildren({
-          page,
-          element: <any>matchTable,
-          selector: "div.minimarketview-content.ui-market.ui-expanded.ui-market-open > ul > li > span.ui-runner-handicap"
-        }).then(parseChildren)
-      */
+
+
 
     const metadata = {
       sport: "football",
@@ -185,7 +188,7 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
       time: "time",
     }
     console.log(type)
-    const odds = oddsConstructor({ players, type, oddValues, url })
+    const odds = oddsConstructor({  type, oddValues, roles, url })
 
     const match = {
       site: "williamhill",

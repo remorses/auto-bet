@@ -9,13 +9,11 @@ const aliases = {
       {
         betfair: "Più/Meno",
         williamhill: "Over/Under 2.5 Goal"
-      }
-    ,
+      },
     "rimborso pareggio":
       {
         betfair: "Rimborso in Caso di Pareggio"
-      }
-
+      },
   },
   "tournament": {
 

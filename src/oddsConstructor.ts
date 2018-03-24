@@ -2,28 +2,32 @@
 // un array di odds,
 //
 import { Match, Metadata, Odd, } from "./interfaces"
-import {  rawToPure } from "./aliases"
+import { rawToPure } from "./aliases"
 import * as assert from "assert"
 
-function oddsConstructor({ players, type, oddValues, url }) {
-  let odds: Odd[] = []
 
+const float = (val) => typeof val === "string" ? parseFloat(val.trim()) : val
+
+
+function oddsConstructor({ players, type, oddValues, roles, url }) {
+  let odds: Odd[] = []
+  if (!players) players = [null, null, null]
 
   // 2 odds
   if (oddValues.length === 2) {
     const odd1 = {
       type: rawToPure("oddType", type),
-      role: "1",
+      role: roles[0],
       player: players[0],
-      value: oddValues[0],
+      value: float(oddValues[0]),
       link: url
 
     }
     const odd2 = {
       type: rawToPure("oddType", type),
-      role: "2",
+      role: roles[1],
       player: players[1],
-      value: oddValues[1],
+      value: float(oddValues[1]),
       link: url
     }
 
@@ -34,24 +38,24 @@ function oddsConstructor({ players, type, oddValues, url }) {
   if (oddValues.length === 3) {
     const odd1 = {
       type: rawToPure("oddType", type),
-      role: "1",
+      role: roles[0],
       player: players[0],
-      value: oddValues[0],
+      value: float(oddValues[0]),
       link: url
 
     }
     const oddx = {
       type: rawToPure("oddType", type),
-      role: "x",
+      role: roles[1],
       player: "none",
-      value: oddValues[1],
+      value: float(oddValues[1]),
       link: url
     }
     const odd2 = {
       type: rawToPure("oddType", type),
-      role: "2",
+      role: roles[2],
       player: players[1],
-      value: oddValues[2],
+      value: float(oddValues[2]),
       link: url
     }
 
