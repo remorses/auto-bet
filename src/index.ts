@@ -1,14 +1,14 @@
-import * as low from "lowdb"
-import * as FileSync from 'lowdb/adapters/FileSync'
 
 
-const adapter = new FileSync('./src/db.json');
-const db = low(adapter);
-
-
-
-// XXX main logic
 (async () => {
-  // await import("@williamhill/index")
-   await import("@grouper/index")
+  const scraper = await import("@scraper/index")
+  const grouper = await import("@grouper/index")
+  const checker = await import("@checker/index")
+  const placer = await import("@placer/index")
+
+  await scraper.run()
+  await grouper.run()
+  await checker.run()
+  await placer.run()
+
 })()

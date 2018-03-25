@@ -75,7 +75,7 @@ const groupBetsByRole = (roles: string[], ...bets: Bet[]): Array<Bet[]> => {
 }
 
 
-// logic to check if a queueMatch is Surebet
+// function to check if a queueMatch is Surebet
 // XXX GroupMatch => Surebet[] || null
 // main logic to find surebets from every GroupMatch
 const surebetsFromMatch = (types = ["outcome"], roles = ["home", "away"], minProfit = 0.03, match: GroupMatch): Surebet[] => {
@@ -102,23 +102,26 @@ const surebetsFromMatch = (types = ["outcome"], roles = ["home", "away"], minPro
 }
 
 
-// Main logic, from checkerQueue take all possible surebets and stores to placerQueue
-// XXX GroupMatch[] => surebet[]
-const adapter = new FileSync('./src/db.json')
-const db = low(adapter)
-const grouperQueue = db.get("grouperQueue").value()
+const run = () => {// Main logic, from checkerQueue take all possible surebets and stores to placerQueue
+  // XXX GroupMatch[] => surebet[]
+  const adapter = new FileSync('./src/db.json')
+  const db = low(adapter)
+  const grouperQueue = db.get("grouperQueue").value()
 
-const types = ["outcome"]
-const roles = ["home", "away"]
-const minProfit = 0.03
+  const types = ["outcome"]
+  const roles = ["home", "away"]
+  const minProfit = 0.03
 
-let placerQueue: Surebet[] = []
-for (let match of grouperQueue) {
-  let surebets: Surebet[] = surebetsFromMatch(types, roles, minProfit, match)
-  if (surebets.length !== 0) placerQueue.push(...surebets)
+  let placerQueue: Surebet[] = []
+  for (let match of grouperQueue) {
+    let surebets: Surebet[] = surebetsFromMatch(types, roles, minProfit, match)
+    if (surebets.length !== 0) placerQueue.push(...surebets)
+  }
+
+  console.log(placerQueue)
+  db.get("placerQueue")
+    .push(...placerQueue)
+    .write()
 }
 
-console.log(placerQueue)
-db.get("placerQueue")
-  .push(...placerQueue)
-  .write()
+export { run }

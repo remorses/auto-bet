@@ -5,21 +5,26 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node -r tsconfig-paths/register src/index"
+    "start": "DEBUG=main ts-node -r tsconfig-paths/register src/index"
   },
   "dependencies": {
     "@types/js-combinatorics": "^0.5.29",
     "@types/lowdb": "^1.0.0",
     "@types/puppeteer": "^1.2.0",
+    "@types/yamljs": "^0.2.30",
     "assert": "^1.4.1",
     "async-parallel": "^1.2.3",
+    "debug": "^3.1.0",
+    "dotenv": "^5.0.1",
     "fs": "^0.0.1-security",
     "js-combinatorics": "^0.5.3",
     "lodash": "^4.17.5",
     "lowdb": "^1.0.0",
     "mobx": "^4.1.0",
     "puppeteer": "^1.1.0",
-    "rxjs": "^5.5.7"
+    "rxjs": "^5.5.7",
+    "yaml": "^0.3.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@types/node": "^9.4.6",

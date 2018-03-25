@@ -15,8 +15,11 @@
     "paths": {
       "@src/*": ["./src/*"],
       "@scraper/*": ["./src/scraper/*"],
+      "@grouper/*": ["./src/grouper/*"],
+      "@checker/*": ["./src/checker/*"],
+      "@placer/*": ["./src/placer/*"],
       "@williamhill/*": ["./src/scraper/williamhill/*"],
-      "@grouper/*": ["./src/grouper/*"]
+      "@betfair/*": ["./src/scraper/betfair/*"]
     }
 
   }

@@ -114,23 +114,27 @@ const groupSameMatches = (mainSite): Match[][] => {
   return groupMatches
 }
 
-// logic to bake the grouperQueue
-// XXX  Match[] => Array<Match[]> =>  GroupMatch[]
-const sites = ["betfair", "unibet"]
-const scraperQueue = db.get("scraperQueue").value()
-let grouperQueue: GroupMatch[] = []
-for (let site of sites) {
-  const sameMatches: Match[][] = groupSameMatches(site)
-  console.log(sameMatches)
-  for (let matches of sameMatches) {
-    const groupMatch: GroupMatch = makeGroupMatch(...matches)
-    if (groupMatch) grouperQueue.push(groupMatch)
+const run = () => {// logic to bake the grouperQueue
+  // XXX  Match[] => Array<Match[]> =>  GroupMatch[]
+  const sites = ["betfair", "unibet"]
+  const scraperQueue = db.get("scraperQueue").value()
+  let grouperQueue: GroupMatch[] = []
+  for (let site of sites) {
+    const sameMatches: Match[][] = groupSameMatches(site)
+    console.log(sameMatches)
+    for (let matches of sameMatches) {
+      const groupMatch: GroupMatch = makeGroupMatch(...matches)
+      if (groupMatch) grouperQueue.push(groupMatch)
+    }
   }
+
+  // write on database
+  if (grouperQueue.length > 0) {
+    db.get("grouperQueue")
+      .push(...grouperQueue)
+      .write()
+  }
+  
 }
 
-// write on database
-if (grouperQueue.length > 0) {
-  db.get("grouperQueue")
-  .push(...grouperQueue)
-  .write()
-}
+export { run }

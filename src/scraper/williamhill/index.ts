@@ -11,17 +11,10 @@ import { login } from "./login"
 
 
 // XXX main logic
-(async () => {
-  const width = 1000
-  const height = 1000
-  const browser = await launch({
-    headless: false,
-    args: [
-      `--window-size=${width},${height}`
-    ],
-  });
+const run = async (browser: Browser, options) => {
+
   const page = await browser.newPage();
-  await page.setViewport({ width, height })
+  await page.setViewport({ width: options.width, height: options.height });
   //await abortMediaRequests(page)
 
   // get the matches urls of a determinated tournament and day
@@ -46,9 +39,10 @@ import { login } from "./login"
     url: urls[0],
     types: ["Over/Under 2.5 Goal"]
   })
-
-  console.log(JSON.stringify(matches))
-
-
   // await browser.close()
-})()
+
+  return matches
+
+}
+
+export { run }

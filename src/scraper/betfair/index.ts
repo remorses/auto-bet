@@ -7,17 +7,10 @@ import { scrapeMatch } from "./scrapeMatch"
 import { login } from "./login"
 
 // XXX main logic
-(async () => {
-  const width = 1000
-  const height = 1000
-  const browser = await launch({
-    headless: false,
-    args: [
-      `--window-size=${width},${height}`
-    ],
-  });
+const run = async (browser, options) => {
+
   const page = await browser.newPage();
-  await page.setViewport({ width, height })
+  await page.setViewport({ width: options.width, height: options.height });
   await abortMediaRequests(page)
 
   // get the matches urls of a determinated tournament and day
@@ -37,7 +30,6 @@ import { login } from "./login"
     }))
   ).then(arr => arr.reduce((acc, curr) => acc.concat(curr), []))
 
-  console.log(JSON.stringify(matches))
 
   /*
     await scrapeMatch({
@@ -48,4 +40,7 @@ import { login } from "./login"
     */
 
   // await browser.close()
-})()
+  return matches
+
+}
+export { run }
