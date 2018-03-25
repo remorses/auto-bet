@@ -50,11 +50,11 @@ const run = async () => {
 
   console.log(JSON.stringify(scraperQueue))
 
-  if (scraperQueue.length > 0) {
+  /*if (scraperQueue.length > 0) {
     db.get("scraperQueue")
       .push(...scraperQueue)
       .write()
-  }
+  }*/
 
   await browser.close()
 }

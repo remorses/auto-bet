@@ -2,7 +2,7 @@
 // un array di odds,
 //
 import { Match, Metadata, Odd, } from "@src/interfaces"
-import { rawToPure } from "@scraper/aliases"
+import { rawToPure } from "@aliases/index"
 
 
 const float = (val) => typeof val === "string" ? parseFloat(val.trim()) : val

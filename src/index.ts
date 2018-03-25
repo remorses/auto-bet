@@ -7,8 +7,8 @@
   const placer = await import("@placer/index")
 
   await scraper.run()
-  await grouper.run()
-  await checker.run()
-  await placer.run()
+  // await grouper.run()
+  // await checker.run()
+  // await placer.run()
 
 })()
