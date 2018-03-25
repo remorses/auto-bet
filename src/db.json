@@ -1,6 +1,212 @@
 {
-  "scraperQueue": [],
-  "grouperQueue": [],
+  "scraperQueue": [
+    {
+      "site": "williamhill",
+      "metadata": {
+        "sport": "football",
+        "tournament": "Serie A",
+        "matchName": "Bologna, Roma",
+        "date": "date",
+        "time": "time"
+      },
+      "odds": [
+        {
+          "type": "underOver_2.5",
+          "role": "Under 2.5",
+          "player": null,
+          "value": "1.95",
+          "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+        },
+        {
+          "type": "underOver_2.5",
+          "player": null,
+          "value": "1.80",
+          "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+        }
+      ]
+    },
+    {
+      "site": "betfair",
+      "metadata": {
+        "sport": "football",
+        "tournament": "Serie A",
+        "matchName": "Bologna, Roma",
+        "date": "date",
+        "time": "time"
+      },
+      "odds": [
+        {
+          "type": "underOver_2.5",
+          "role": "Under 2.5",
+          "player": null,
+          "value": "1.95",
+          "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+        },
+        {
+          "type": "underOver_2.5",
+          "player": null,
+          "value": "2",
+          "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+        }
+      ]
+    }
+  ],
+  "grouperQueue": [
+    {
+      "metadata": {
+        "sport": "football",
+        "tournament": "Serie A",
+        "matchName": "Bologna, Roma",
+        "date": "date",
+        "time": "time"
+      },
+      "bets": [
+        {
+          "site": "betfair",
+          "metadata": {
+            "sport": "football",
+            "tournament": "Serie A",
+            "matchName": "Bologna, Roma",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": null,
+            "value": "1.95",
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        },
+        {
+          "site": "betfair",
+          "metadata": {
+            "sport": "football",
+            "tournament": "Serie A",
+            "matchName": "Bologna, Roma",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "underOver_2.5",
+            "player": null,
+            "value": "2",
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        },
+        {
+          "site": "williamhill",
+          "metadata": {
+            "sport": "football",
+            "tournament": "Serie A",
+            "matchName": "Bologna, Roma",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": null,
+            "value": "1.95",
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        },
+        {
+          "site": "williamhill",
+          "metadata": {
+            "sport": "football",
+            "tournament": "Serie A",
+            "matchName": "Bologna, Roma",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "underOver_2.5",
+            "player": null,
+            "value": "1.80",
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        }
+      ]
+    },
+    {
+      "metadata": {
+        "sport": "football",
+        "tournament": "Serie A",
+        "matchName": "Bologna, Roma",
+        "date": "date",
+        "time": "time"
+      },
+      "bets": [
+        {
+          "site": "betfair",
+          "metadata": {
+            "sport": "football",
+            "tournament": "Serie A",
+            "matchName": "Bologna, Roma",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": null,
+            "value": "1.95",
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        },
+        {
+          "site": "betfair",
+          "metadata": {
+            "sport": "football",
+            "tournament": "Serie A",
+            "matchName": "Bologna, Roma",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "underOver_2.5",
+            "player": null,
+            "value": "2",
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        },
+        {
+          "site": "williamhill",
+          "metadata": {
+            "sport": "football",
+            "tournament": "Serie A",
+            "matchName": "Bologna, Roma",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": null,
+            "value": "1.95",
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        },
+        {
+          "site": "williamhill",
+          "metadata": {
+            "sport": "football",
+            "tournament": "Serie A",
+            "matchName": "Bologna, Roma",
+            "date": "date",
+            "time": "time"
+          },
+          "odd": {
+            "type": "underOver_2.5",
+            "player": null,
+            "value": "1.80",
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        }
+      ]
+    }
+  ],
   "placerQueue": [
     {
       "profit": 0.27296587926509197,

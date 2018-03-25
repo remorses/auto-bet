@@ -27,7 +27,7 @@ const groupBySite = (sites: string[], ...matches: Match[]): Array<Match[]> => {
 */
 
 // main logic XXX XXX XXX
-const adapter = new FileSync('../db.json')
+const adapter = new FileSync('./src/db.json')
 const db = low(adapter)
 
 

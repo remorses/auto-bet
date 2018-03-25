@@ -104,7 +104,7 @@ const surebetsFromMatch = (types = ["outcome"], roles = ["home", "away"], minPro
 
 // Main logic, from checkerQueue take all possible surebets and stores to placerQueue
 // XXX GroupMatch[] => surebet[]
-const adapter = new FileSync('../db.json')
+const adapter = new FileSync('./src/db.json')
 const db = low(adapter)
 const grouperQueue = db.get("grouperQueue").value()
 

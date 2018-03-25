@@ -15,7 +15,8 @@
     "paths": {
       "@src/*": ["./src/*"],
       "@scraper/*": ["./src/scraper/*"],
-      "@williamhill/*": ["./src/scraper/williamhill/*"]
+      "@williamhill/*": ["./src/scraper/williamhill/*"],
+      "@grouper/*": ["./src/grouper/*"]
     }
 
   }
