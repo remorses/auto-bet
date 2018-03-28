@@ -12,6 +12,21 @@ function oddsConstructor({ players, type, oddValues, roles, url }: { players?: s
   let odds: Odd[] = []
   if (!players) players = [null, null, null,]
 
+
+  // 2 odds
+  if (oddValues.length === 1) {
+    if (!roles) roles = ["1", "2"]
+    const odd1 = {
+      type: rawToPure("oddType", type),
+      role: roles[0],
+      player: players[0],
+      value: float(oddValues[0]),
+      link: url
+    }
+    odds.push(odd1)
+  }
+
+
   // 2 odds
   if (oddValues.length === 2) {
     if (!roles) roles = ["1", "2"]

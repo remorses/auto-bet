@@ -18,6 +18,7 @@
       "@grouper/*": ["./src/grouper/*"],
       "@checker/*": ["./src/checker/*"],
       "@placer/*": ["./src/placer/*"],
+      "@aliases/*": ["./src/aliases/*"],
       "@williamhill/*": ["./src/scraper/williamhill/*"],
       "@betfair/*": ["./src/scraper/betfair/*"]
     }

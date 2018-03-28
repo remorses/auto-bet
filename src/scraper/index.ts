@@ -41,8 +41,8 @@ const run = async () => {
 
   let scraperQueue: Match[] = await Promise.all(
     [
-      betfair.run(browser, options),
-      williamhill.run(browser, options),
+       await betfair.run(browser, options),
+       //williamhill.run(browser, options),
     ]
   ).then(arr => arr.reduce((a, b) => a.concat(b)))
 
@@ -56,7 +56,7 @@ const run = async () => {
       .write()
   }*/
 
-  await browser.close()
+  //await browser.close()
 }
 
 

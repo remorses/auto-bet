@@ -83,7 +83,7 @@ const surebetsFromMatch = (types = ["outcome"], roles = ["home", "away"], minPro
   let sameTypeBets: Array<Bet[]> = groupMatchByType(types, match)
   // console.log("same type",sameTypeBets) // TODO remove
   for (let betGroup of sameTypeBets) {
-    let sameRoleGroups: Array<Bet[]> = groupBetsByRole(roles, ...betGroup) // bets grouped by opposed roles
+    let sameRoleGroups: Array<Bet[]> = groupBetsByRole(roles, ...betGroup) // bets grouped by different roles
     // console.log("same role",sameRoleGroups) // TODO remove
     let combinations: Array<Bet[]> = allCombinations(...sameRoleGroups) // possible odds to bet
     for (let combination of combinations) {

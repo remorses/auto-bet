@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "DEBUG=main ts-node -r tsconfig-paths/register src/index"
+    "start": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index"
   },
   "dependencies": {
     "@types/js-combinatorics": "^0.5.29",

@@ -1,22 +1,17 @@
 
 import { Page, ElementHandle, JSHandle, Browser, Request, Response } from 'puppeteer'
 import { Match, Metadata, Odd, } from "@src/interfaces"
-import { oddsConstructor } from "@scraper/oddsConstructor"
+import { rawToPure, pureToRaw } from "@aliases/index"
 import {
-  getAttribute,
-  logger,
-  resolveIf,
-  getHref,
-  parseChildren,
-  getContent,
-  whenUpdated,
-  getChildContent,
   findParentElement,
   waitForLoad,
-  getChildren,
-  findElement,
-  abortMediaRequests
+  logger
 } from "@scraper/helpers"
+import { singleLine, handicapCorners } from "./scrapeCases"
+
+import * as Debug from "debug";
+const debug = Debug("scraper:betfair:scrapeMatch");
+
 
 
 async function scrapeMatch({ browser, url, types }: { browser: Browser, url: string, types: string[] }) {
@@ -32,63 +27,36 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
 
   await Promise.all(types.map(async (type: string) => {
 
-
+    debug(pureToRaw("oddType", type, "betfair"))
     const matchTable = await findParentElement({
       page,
-      content: type,
+      content: pureToRaw("oddType", type, "betfair"),
       child: " span.title",
       parent: "div#zone-rightcolumn > div > div > div> div> div> div> div> div> div:not(.filters).list-minimarkets > div > div"
     }).catch(logger("error")) // TODO, undefined
-    console.log("matchTable", !!matchTable) // TODO solo esistenza
+    debug("matchTable", !!matchTable) // TODO solo esistenza
     await waitForLoad(page)
 
+    if (!matchTable) return
 
-    // get the players in an array of three
-    const players: string[] = await getChildContent({
-      page,
-      parent: matchTable,
-      selector: " span.runner-name"
-    }).then(logger("players, before parse")).catch(logger("error")) // TODO niente, array vuoto
-
-
-    // tournament
-    const tournament: string = await page.$("div#zone-leftcolumn div:nth-child(1) > div > div > div > a > span")
-      .then(a => a ? getContent(a) : "Error")
-
-
-    // get the odds, in an array
-    const oddValues: number[] = await getChildren({
-      page,
-      element: matchTable,
-      selector: "ul > li > a > span.ui-runner-price"
-    }).then(parseChildren).then(a => a.map(t => parseFloat(t.trim())))
-      .then(logger("odds, with getChildren"))
-
-    /*
-        // get the odd types ( handicap value)
-        const handicapTypes: string[] = await getChildren({
-          page,
-          element: <any>matchTable,
-          selector: "div.minimarketview-content.ui-market.ui-expanded.ui-market-open > ul > li > span.ui-runner-handicap"
-        }).then(parseChildren)
-      */
-
-    // XXX Match constructor
-    const metadata = {
-      sport: "football",
-      tournament: tournament,
-      matchName: players.join(", "),
-      date: "date",
-      time: "time",
-    }
-    const odds = oddsConstructor({ players, type, oddValues, url })
-    const match = {
-      site: "betfair",
-      metadata,
-      odds
+    switch (type) {
+      case "Rimborso in Caso di Pareggio":
+      case "underOver_2.5":
+      case "rigore_YesNo":
+        matches.push(await singleLine({ page, matchTable, type, url }))
+        break
+      case 'handicapCorners_["-1","+2"]':
+      case 'handicapCorners_["-2","+3"]':
+      case 'handicapCorners_["-3","+4"]':
+      case 'handicapCorners_["-4","+5"]':
+      case 'handicapCorners_["+2","-1"]':
+      case 'handicapCorners_["+3","-2"]':
+      case 'handicapCorners_["+4","-3"]':
+      case 'handicapCorners_["+5","-4"]':
+        matches.push(... await handicapCorners({ page, matchTable, type, url }))
+        break
     }
 
-    matches.push(match)
   }))
   return matches
 }

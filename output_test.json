@@ -1,0 +1,154 @@
+[{
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "Amichevoli Internazionali",
+      "matchName": "Inghilterra, Italia",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "handicapCorners_[\"-1\",\"+2\"]",
+      "player": "Inghilterra",
+      "link": "https://www.betfair.it/sport/football/event?eventId=28642064"
+    }]
+  }, {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "Amichevoli Internazionali",
+      "matchName": "Inghilterra, Italia",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "handicapCorners_[\"-1\",\"+2\"]",
+      "player": "Inghilterra",
+      "link": "https://www.betfair.it/sport/football/event?eventId=28642064"
+    }]
+  },
+
+  {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "Amichevoli Internazionali",
+      "matchName": "Inghilterra, Italia",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "handicapCorners_[\"-1\",\"+2\"]",
+      "role": "Inghilterra-1",
+      "player": "Inghilterra",
+      "value": 1.9,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28642064"
+    }]
+  }, {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "Amichevoli Internazionali",
+      "matchName": "Inghilterra, Italia",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "handicapCorners_[\"-1\",\"+2\"]",
+      "role": "Italia+2",
+      "player": "Inghilterra",
+      "value": 2.2,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28642064"
+    }]
+  },
+
+  {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "UEFA Europa League",
+      "matchName": "Atletico Madrid, Sporting",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "rimborso pareggio",
+      "role": "Atletico Madrid",
+      "player": "Atletico Madrid",
+      "value": 1.1,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+    }, {
+      "type": "rimborso pareggio",
+      "role": "Sporting",
+      "player": "Sporting",
+      "value": 7,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+    }]
+  }, {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "UEFA Europa League",
+      "matchName": "Lazio, Red Bull Salisburgo",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "rimborso pareggio",
+      "role": "Lazio",
+      "player": "Lazio",
+      "value": 1.28,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637726"
+    }, {
+      "type": "rimborso pareggio",
+      "role": "Red Bull Salisburgo",
+      "player": "Red Bull Salisburgo",
+      "value": 3.5,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637726"
+    }]
+  }, {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "UEFA Europa League",
+      "matchName": "Arsenal, CSKA Mosca",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "rimborso pareggio",
+      "role": "Arsenal",
+      "player": "Arsenal",
+      "value": 1.11,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637724"
+    }, {
+      "type": "rimborso pareggio",
+      "role": "CSKA Mosca",
+      "player": "CSKA Mosca",
+      "value": 6.5,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637724"
+    }]
+  }, {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "UEFA Europa League",
+      "matchName": "RB Lipsia, Marseille",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "rimborso pareggio",
+      "role": "RB Lipsia",
+      "player": "RB Lipsia",
+      "value": 1.33,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637723"
+    }, {
+      "type": "rimborso pareggio",
+      "role": "Marseille",
+      "player": "Marseille",
+      "value": 3.25,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637723"
+    }]
+  }
+]

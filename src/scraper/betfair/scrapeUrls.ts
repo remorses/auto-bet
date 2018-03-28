@@ -1,6 +1,7 @@
 
 import { Page, ElementHandle, JSHandle, Browser, Request, Response } from 'puppeteer'
 import { Match, Metadata, Odd, } from "@src/interfaces"
+import { rawToPure, pureToRaw } from "@aliases/index"
 import { oddsConstructor } from "@scraper/oddsConstructor"
 import {
   getAttribute,

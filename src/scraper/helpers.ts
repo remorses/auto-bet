@@ -72,6 +72,25 @@ const findParentElement = async ({ page, content, child, parent }: { page: Page,
 }
 
 
+
+export const findParentElementFromElement = async ({ page, grandParent, content, child, parent }: { page: Page,grandParent: ElementHandle,  content: string, child: string, parent: string }) => {
+  let result
+  try {
+    // console.log(parent + child)
+    const elements: ElementHandle[] = await grandParent.$$(parent)
+    if (elements.length < 1) throw new Error("can't proceed, no elements")
+    for (let element of elements) {
+      let childElement = await element.$(child) // null TODO
+      if (!childElement) continue
+      let inner = await getContent(childElement)
+      console.log("find parent: ", inner, )
+      if (inner.trim() === content) { result = element; break } else { continue }
+    }
+  } catch (e) { console.error("findParentElement: ", e) }
+  return result
+}
+
+
 // XXX returns children of an <element> with a <selector>
 const getChildren = async ({ page, element, selector }: { page: Page, element: JSHandle, selector: string }): Promise<ElementHandle[]> => {
   let children: ElementHandle[] = [];
@@ -111,7 +130,7 @@ const findElement = async ({ page, content, selector }: { page: Page, content: s
 
 
 const getContent = async (element: ElementHandle): Promise<string> => {
-  if (!element) throw new Error("no element where get the content")
+  if (!element) throw new Error("getContent: no element where get the content")
   return (await (await element.getProperty("innerHTML")).jsonValue()).trim()
 }
 
