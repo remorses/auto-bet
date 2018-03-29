@@ -2,6 +2,7 @@ import { Page, ElementHandle, JSHandle, Browser, Request, Response } from 'puppe
 import { oddsConstructor } from "@scraper/oddsConstructor"
 import { rawToPure, pureToRaw } from "@aliases/index"
 import { Match, Metadata, Odd, } from "@src/interfaces"
+import * as moment from "moment"
 import {
   getAttribute,
   logger,
@@ -9,7 +10,7 @@ import {
   getHref,
   parseChildren,
   getContent,
-  whenUpdated,
+  //whenUpdated,
   getChildContent,
   findParentElement,
   waitForLoad,
@@ -30,18 +31,31 @@ const debug = Debug("scraper:betfair:scrapeCases");
 // quindi dovrò inserire una decina di diverse oddType per ogni caso possibile e nel momento di odds constructor, lasciare una parte di bet nulla se non c'è la
 // scommessa corrispondente sul sito.
 
-export const singleLine = async ({ page, matchTable, type, url }): Promise<Match> => {
+export const singleLine = async ({ page, matchTable, type, url, doRoles = false }: { page, matchTable, type, url, doRoles?: boolean }): Promise<Match> => {
   // get the players in an array of three
   const roles: string[] = await getChildContent({
     page,
     parent: matchTable,
     selector: " span.runner-name"
-  }).then(logger("players, before parse")).catch(logger("error")) // TODO niente, array vuoto
+  }).then(logger("players, before parse")).catch(debug)
+    .then(arr => arr.map(role => rawToPure("role", role, "betfair"))) // TODO niente, array vuoto
 
   // get the players in an array of three
   const players = [
     await page.$("td.home-runner").then(getContent),
     await page.$("td.away-runner").then(getContent)]
+  /*
+    const dayNumber = await page.$("div#zone-leftcolumn div > div > div > span.ui-when-event-inprogress > span")
+      .then(getContent)
+      .then(debug)
+      .then(s => s !== "Live" ? s.trim().split(" ")[1] : Date.now())
+      .catch(debug)
+
+    const monthWord = await page.$("div#zone-leftcolumn div > div > div > span.ui-when-event-inprogress > span")
+      .then(getContent)
+      .then(s => s !== "Live" ? s.trim().split(" ")[2] : "")
+      .then(raw => rawToPure("monthWord", raw, "betfair"))
+      .catch(debug)*/
 
   // tournament
   const tournament: string = await page.$("div#zone-leftcolumn div:nth-child(1) > div > div > div > a > span")
@@ -60,16 +74,26 @@ export const singleLine = async ({ page, matchTable, type, url }): Promise<Match
     sport: "football",
     tournament: tournament,
     matchName: players.join(", "),
-    date: "date",
+    date: "date", // dayNumber + "_" + monthWord,
     time: "time",
   }
-  const odds = oddsConstructor({
-    players,
-    type,
-    oddValues,
-    url,
-    roles
-  })
+  let odds
+  if (!doRoles) {
+    odds = oddsConstructor({
+      players,
+      type,
+      oddValues,
+      url,
+    })
+  } else {
+    odds = oddsConstructor({
+      players,
+      type,
+      oddValues,
+      url,
+      roles
+    })
+  }
   const match = {
     site: "betfair",
     metadata,
@@ -130,7 +154,7 @@ export const handicapCorners = async ({ page, matchTable, type, url }): Promise<
       sport: "football",
       tournament: tournament,
       matchName: players.join(", "),
-      date: "date",
+      date: "date", // dayNumber + "_" + monthWord,
       time: "time",
     }
     const odds = oddsConstructor({ players, roles: [role], type, oddValues: [oddValue], url })

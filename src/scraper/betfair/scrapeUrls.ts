@@ -10,7 +10,7 @@ import {
   getHref,
   parseChildren,
   getContent,
-  whenUpdated,
+  //whenUpdated,
   getChildContent,
   findParentElement,
   waitForLoad,
@@ -19,50 +19,60 @@ import {
   abortMediaRequests
 } from "@scraper/helpers"
 
-
-async function scrapeUrls({ page, site, day, state, tournament }: { page: Page, site, day, state, tournament }): Promise<string[]> {
-  // go to football
-  await page.goto(site);
-
-  // go to italia
-  const button = await page.waitForSelector("div#zone-main a.ui-nav.browse-all-arrow > span").then(a => a.click())
-  await waitForLoad(page)
-  await findElement({
-    page,
-    content: state,
-    selector: "div#zone-main li > a > span.label"
-  })
-    .then(resolveIf)
-    .then((a) => a.click())
+import * as Debug from "debug";
+const debug = Debug("scraper:betfair:scrapeUrls");
 
 
-  // go to tournament
-  await waitForLoad(page)
-  await findElement({
-    page,
-    content: tournament,
-    selector: "div#zone-main li > span > a.ui-nav"
-  })
-    .then(resolveIf)
-    .then((a) => a.click())
+async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page, site, days: string[], state, tournaments: string[] }): Promise<string[]> {
+  let hrefs: string[] = []
+  try {  // go to football
+    for (let tournament of tournaments) {
 
+      await page.goto(site);
+      // go to state
+      await page.$("div#zone-main a.ui-nav.browse-all-arrow > span")
+        .then(resolveIf)
+        .then(a => a.click())
+      await waitForLoad(page)
+      await findElement({
+        page,
+        content: state,
+        selector: "div#zone-main li > a > span.label"
+      })
+        .then(resolveIf)
+        .then((a) => a.click())
+      await waitForLoad(page)
 
-  // get the links of matches
-  await waitForLoad(page)
-  const dayTable = await findParentElement({
-    page,
-    content: day,
-    child: "div > span.section-header-label",
-    parent: "div#zone-main li "
-  })
-  const links: JSHandle[] = await getChildren({
-    page,
-    element: dayTable,
-    selector: "ul > li > div > div.avb-col.avb-col-markets > a.ui-nav.markets-number-arrow.ui-top.event-link"
-  });
-  const hrefs: string[] = await Promise.all(links.map(link => link.getProperty("href").then(href => href.jsonValue())))
-  console.log(hrefs)
-  return hrefs
+      await findElement({
+        page,
+        content: tournament,
+        selector: "div#zone-main li > span > a.ui-nav"
+      })
+        .then(resolveIf)
+        .then((a) => a.click())
+      // get the links of matches
+      await waitForLoad(page)
+      for (let day of days) {
+        const dayTable = await findParentElement({
+          page,
+          content: day,
+          child: "div > span.section-header-label",
+          parent: "div#zone-main li "
+        })
+        if (!dayTable) throw new Error("no day Table")
+        const links = await getChildren({
+          page,
+          element: dayTable,
+          selector: "ul > li > div > div.avb-col.avb-col-markets > a.ui-nav.markets-number-arrow.ui-top.event-link"
+        }).then(arr => arr.map(getHref))
+        hrefs.push(...await Promise.all(links))
+      }
+    }
+  } catch (e) { debug(e) }
+  finally {
+    debug(hrefs)
+    return hrefs
+  }
 }
 
 

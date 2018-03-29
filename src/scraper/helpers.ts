@@ -1,11 +1,12 @@
 import { Page, ElementHandle, JSHandle, Browser, Request, Response } from 'puppeteer'
 // import { when, observable, action, reaction } from "mobx"
-
+import * as Debug from "debug";
+const debug = Debug("scraper:helpers");
 
 // invece di waitFor
 export const waitForLoad = (page: Page) => new Promise((resolve) => {
   page.on('request', (req) => {
-    setTimeout(() => resolve("timeOut"), 500)
+    setTimeout(() => resolve("timeOut"), 600)
   })
   setTimeout(() => resolve("timeOut"), 2500)
 })
@@ -23,17 +24,17 @@ function whenUpdated(page) {
       action(() => updates.value++)()
     }
   })
-  reaction(() => updates.value, (value) => console.log(value))
+  reaction(() => updates.value, (value) => debug(value))
 }*/
 
 // get child content
 export const getChildContent = async ({ page, parent, selector }) => {
   let results: string[] = []
   const elements: ElementHandle[] = await parent.$$(selector)
-  if (elements.length < 1) throw new Error("can't proceed, no elements")
+  if (elements.length < 1) throw new Error(`can't proceed getChildContent for ${selector}, no elements`)
   for (let element of elements) {
     let inner: string = await getContent(element)
-    console.log(inner)
+    // debug(inner)
     results.push(inner)
   }
   return results
@@ -42,15 +43,14 @@ export const getChildContent = async ({ page, parent, selector }) => {
 
 export const findParentElement = async ({ page, content, child, parent }: { page: Page, content: string, child: string, parent: string }) => {
   let result
-  await page.waitForSelector(parent + " " + child)
-  // console.log(parent + child)
+  // await page.waitForSelector(parent + " " + child)
   const elements: ElementHandle[] = await page.$$(parent)
-  if (elements.length < 1) throw new Error("can't proceed, no elements")
+  if (elements.length < 1) throw new Error(`can't proceed findParentElement for ${content}, no elements`)
   for (let element of elements) {
     let childElement = await element.$(child) // null TODO
     if (!childElement) continue
     let inner = await getContent(childElement)
-    console.log("find parent: ", inner, )
+    // debug("find parent: ", inner, )
     if (inner.trim() === content) { result = element; break } else { continue }
   }
   return result
@@ -59,14 +59,14 @@ export const findParentElement = async ({ page, content, child, parent }: { page
 
 export const findParentElementFromElement = async ({ page, grandParent, content, child, parent }: { page: Page, grandParent: ElementHandle, content: string, child: string, parent: string }) => {
   let result
-  // console.log(parent + child)
+  // debug(parent + child)
   const elements: ElementHandle[] = await grandParent.$$(parent)
-  if (elements.length < 1) throw new Error("findParentElementFromElement: can't proceed, no elements")
+  if (elements.length < 1) throw new Error(`can't proceed findParentElementFromElement for ${content}, no elements`)
   for (let element of elements) {
     let childElement = await element.$(child) // null TODO
     if (!childElement) continue
     let inner = await getContent(childElement)
-    console.log("find parent: ", inner, )
+    // debug("find parent: ", inner, )
     if (inner.trim() === content) { result = element; break } else { continue }
   }
   return result
@@ -76,15 +76,15 @@ export const findParentElementFromElement = async ({ page, grandParent, content,
 // XXX returns children of an <element> with a <selector>
 export const getChildren = async ({ page, element, selector }: { page: Page, element: JSHandle, selector: string }): Promise<ElementHandle[]> => {
   let children: ElementHandle[] = [];
-  if (!element) throw new Error("can't proceed getChildren(), no element")
+  if (!element) throw new Error(`can't proceed getChildren for ${selector}, no element`)
   const listHandle = await page.evaluateHandle((element, selector) => element.querySelectorAll(selector), element, selector);
-  if (!listHandle) throw new Error("can't proceed getChildren(), no children")
+  if (!listHandle) throw new Error(`can't proceed getChildren for ${selector}, no children`)
   const properties = await listHandle.getProperties();
   for (const property of properties.values()) {
     const child = property.asElement();
     if (child) {
       children.push(child);
-      console.log(await getContent(child), " ,get children")
+      // debug(await getContent(child), " ,get children")
     }
   }
   return children;
@@ -94,17 +94,21 @@ export const getChildren = async ({ page, element, selector }: { page: Page, ele
 export const findElement = async ({ page, content, selector }: { page: Page, content: string, selector: string }) => {
   await page.waitForSelector(selector)
   const elements: ElementHandle[] = await page.$$(selector)
+  if (elements.length < 1) throw new Error(`can't proceed findElement for ${content}, no elements`)
   for (let element of elements) {
     let inner = await getContent(element)
-    //  console.log(inner.trim())
-    if (inner.trim() === content) { console.log(inner, ", findElement"); return element }
+    //  debug(inner.trim())
+    if (inner.trim() === content) {
+    // debug(inner, ", findElement");
+    return element }
   }
 }
 
 
 export const getContent = async (element: ElementHandle): Promise<string> => {
-  if (!element) throw new Error("getContent: no element where get the content")
-  return (await (await element.getProperty("innerHTML")).jsonValue()).trim()
+  const inner = await  element.getProperty("innerHTML")
+  if (!inner) throw new Error(`can't proceed getContent, no inner`)
+  return (await inner.jsonValue()).trim()
 }
 
 
@@ -113,13 +117,15 @@ export const parseChildren = (arr: ElementHandle[]) => {
 }
 
 
-export const getHref = async (element: ElementHandle) => {
-  await (await element.getProperty("href")).jsonValue()
+export const getHref = async (element: ElementHandle): Promise<string> => {
+  const href = await element.getProperty("href")
+  if (!href) throw new Error(`can't proceed getContent, no href`)
+  return await href.jsonValue()
 }
 
 
 export const logger = (text) => (a) => {
-  console.log(text, " : ", a);
+   debug(text, ": ", a);
   return a
 }
 
@@ -128,7 +134,7 @@ export const logger = (text) => (a) => {
 export const resolveIf = async (bool: any) => {
   if (bool) { return bool }
   else {
-    setTimeout(async () => { return bool }, 500)
+    setTimeout(async () => { return bool }, 800)
   }
 }
 

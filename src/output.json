@@ -1,0 +1,655 @@
+{
+  "outputs": [
+    [
+      {
+        "site": "betfair",
+        "metadata": {
+          "sport": "football",
+          "tournament": "UEFA Europa League",
+          "matchName": "Atletico Madrid, Sporting",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "rigore_yesNo",
+            "role": "yes",
+            "player": "Atletico Madrid",
+            "value": 3.75,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+          },
+          {
+            "type": "rigore_yesNo",
+            "role": "no",
+            "player": "Sporting",
+            "value": 1.22,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+          }
+        ]
+      },
+      {
+        "site": "betfair",
+        "metadata": {
+          "sport": "football",
+          "tournament": "UEFA Europa League",
+          "matchName": "Lazio, Red Bull Salzburg",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "rigore_yesNo",
+            "role": "yes",
+            "player": "Lazio",
+            "value": 3.75,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637726"
+          },
+          {
+            "type": "rigore_yesNo",
+            "role": "no",
+            "player": "Red Bull Salzburg",
+            "value": 1.22,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637726"
+          }
+        ]
+      },
+      {
+        "site": "betfair",
+        "metadata": {
+          "sport": "football",
+          "tournament": "UEFA Europa League",
+          "matchName": "Arsenal, CSKA Mosca",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "rigore_yesNo",
+            "role": "yes",
+            "player": "Arsenal",
+            "value": 3.75,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637724"
+          },
+          {
+            "type": "rigore_yesNo",
+            "role": "no",
+            "player": "CSKA Mosca",
+            "value": 1.22,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637724"
+          }
+        ]
+      },
+      {
+        "site": "betfair",
+        "metadata": {
+          "sport": "football",
+          "tournament": "UEFA Europa League",
+          "matchName": "RB Lipsia, Marseille",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "rigore_yesNo",
+            "role": "yes",
+            "player": "RB Lipsia",
+            "value": 3.75,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637723"
+          },
+          {
+            "type": "rigore_yesNo",
+            "role": "no",
+            "player": "Marseille",
+            "value": 1.22,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637723"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "site": "betfair",
+        "metadata": {
+          "sport": "football",
+          "tournament": "UEFA Europa League",
+          "matchName": "Atletico Madrid, Sporting",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "rigore_yesNo",
+            "role": "yes",
+            "player": "Atletico Madrid",
+            "value": 3.75,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+          },
+          {
+            "type": "rigore_yesNo",
+            "role": "no",
+            "player": "Sporting",
+            "value": 1.22,
+            "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+          }
+        ]
+      }
+    ],
+    [],
+    [],
+    [],
+    [
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Bologna, Roma",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Bologna",
+            "value": 2,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Roma",
+            "value": 1.72,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Fiorentina, Crotone",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Fiorentina",
+            "value": 1.95,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568928/Fiorentina+-+Crotone.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Crotone",
+            "value": 1.8,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568928/Fiorentina+-+Crotone.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Genoa, Spal",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Genoa",
+            "value": 1.5,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568929/Genoa+-+Spal.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Spal",
+            "value": 2.5,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568929/Genoa+-+Spal.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Inter, Verona",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Inter",
+            "value": 3,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568930/Inter+-+Verona.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Verona",
+            "value": 1.36,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568930/Inter+-+Verona.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Cagliari, Torino",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Cagliari",
+            "value": 1.95,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568932/Cagliari+-+Torino.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Torino",
+            "value": 1.8,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568932/Cagliari+-+Torino.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Atalanta, Udinese",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Atalanta",
+            "value": 1.9,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568933/Atalanta+-+Udinese.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Udinese",
+            "value": 1.9,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568933/Atalanta+-+Udinese.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Lazio, Benevento",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Lazio",
+            "value": 3,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568934/Lazio+-+Benevento.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Benevento",
+            "value": 1.36,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568934/Lazio+-+Benevento.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Sassuolo, Napoli",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Sassuolo",
+            "value": 2.15,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568931/Sassuolo+-+Napoli.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Napoli",
+            "value": 1.65,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568931/Sassuolo+-+Napoli.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Chievo, Sampdoria",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Chievo",
+            "value": 1.9,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568935/Chievo+-+Sampdoria.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Sampdoria",
+            "value": 1.9,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568935/Chievo+-+Sampdoria.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Juventus, Milan",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Juventus",
+            "value": 1.65,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568924/Juventus+-+Milan.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "player": "Milan",
+            "value": 2.15,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568924/Juventus+-+Milan.html"
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Bologna, Roma",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Bologna",
+            "value": 2,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Roma",
+            "value": 1.72,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568923/Bologna+-+Roma.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Fiorentina, Crotone",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Fiorentina",
+            "value": 1.95,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568928/Fiorentina+-+Crotone.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Crotone",
+            "value": 1.8,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568928/Fiorentina+-+Crotone.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Genoa, Spal",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Genoa",
+            "value": 1.5,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568929/Genoa+-+Spal.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Spal",
+            "value": 2.5,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568929/Genoa+-+Spal.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Inter, Verona",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Inter",
+            "value": 3,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568930/Inter+-+Verona.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Verona",
+            "value": 1.36,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568930/Inter+-+Verona.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Cagliari, Torino",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Cagliari",
+            "value": 1.95,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568932/Cagliari+-+Torino.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Torino",
+            "value": 1.8,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568932/Cagliari+-+Torino.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Atalanta, Udinese",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Atalanta",
+            "value": 1.9,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568933/Atalanta+-+Udinese.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Udinese",
+            "value": 1.9,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568933/Atalanta+-+Udinese.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Lazio, Benevento",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Lazio",
+            "value": 3,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568934/Lazio+-+Benevento.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Benevento",
+            "value": 1.36,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568934/Lazio+-+Benevento.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Sassuolo, Napoli",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Sassuolo",
+            "value": 2.15,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568931/Sassuolo+-+Napoli.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Napoli",
+            "value": 1.65,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568931/Sassuolo+-+Napoli.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Chievo, Sampdoria",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Chievo",
+            "value": 1.9,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568935/Chievo+-+Sampdoria.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Sampdoria",
+            "value": 1.9,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568935/Chievo+-+Sampdoria.html"
+          }
+        ]
+      },
+      {
+        "site": "williamhill",
+        "metadata": {
+          "sport": "football",
+          "tournament": "Serie A",
+          "matchName": "Juventus, Milan",
+          "date": "date",
+          "time": "time"
+        },
+        "odds": [
+          {
+            "type": "underOver_2.5",
+            "role": "Under 2.5",
+            "player": "Juventus",
+            "value": 1.65,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568924/Juventus+-+Milan.html"
+          },
+          {
+            "type": "underOver_2.5",
+            "role": "Over 2.5",
+            "player": "Milan",
+            "value": 2.15,
+            "link": "http://sports.williamhill.it/bet_ita/it/betting/e/12568924/Juventus+-+Milan.html"
+          }
+        ]
+      }
+    ]
+  ]
+}

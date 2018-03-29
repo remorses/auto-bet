@@ -2,7 +2,7 @@
 // system to convert the nomenclature of sites to pure
 import { aliases } from "./aliases"
 
-type Category = "oddType" | "role" | "tournament" | "dayNumber" | "dayWord" | "month";
+type Category = "oddType" | "role" | "tournament" | "dayNumber" | "dayWord" | "monthWord";
 type Site = "williamhill" | "betfair";
 
 

@@ -7,7 +7,6 @@ export const aliases = {
     "rimborso pareggio": {
       betfair: "Rimborso in Caso di Pareggio"
     },
-
     'handicapCorners_["-1","+2"]': { betfair: "Handicap calci d'angolo" },
     'handicapCorners_["-2","+3"]': { betfair: "Handicap calci d'angolo" },
     'handicapCorners_["-3","+4"]': { betfair: "Handicap calci d'angolo" },
@@ -16,7 +15,7 @@ export const aliases = {
     'handicapCorners_["+3","-2"]': { betfair: "Handicap calci d'angolo" },
     'handicapCorners_["+4","-3"]': { betfair: "Handicap calci d'angolo" },
     'handicapCorners_["+5","-4"]': { betfair: "Handicap calci d'angolo" },
-
+    "rigore_yesNo": { betfair: "Rigore Si/No" },
   },
   "tournament": {
     "serie A": {
@@ -28,7 +27,9 @@ export const aliases = {
     "under 2.5": {
       williamhill: "Under 2.5",
       betfair: "Under 2.5"
-    }
+    },
+    "yes": {betfair: "Sì"},
+    "no": {betfair: "No"}
   },
   "dayWord": {
     "sabato": {
@@ -60,25 +61,25 @@ export const aliases = {
       williamhill: "venerdì"
     }
   },
-  "month": {
+  "monthWord": {
     "settembre": {
-      betfair: "settembre",
+      betfair: "set",
       williamhill: "Set"
     },
     "febbraio": {
-      betfair: "febbraio",
+      betfair: "feb",
       williamhill: "Feb"
     },
     "marzo": {
-      betfair: "marzo",
+      betfair: "mar",
       williamhill: "Mar"
     },
     "aprile": {
-      betfair: "aprile",
+      betfair: "apr",
       williamhill: "Apr"
     },
     "maggio": {
-      betfair: "maggio",
+      betfair: "mag",
       williamhill: "Mag"
     },
   }

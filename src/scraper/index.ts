@@ -3,15 +3,17 @@ import { launch, Page, ElementHandle, JSHandle, Browser, Request, Response } fro
 import { Match, Metadata, Odd, } from "@src/interfaces"
 import * as low from "lowdb"
 import * as FileSync from 'lowdb/adapters/FileSync'
-import * as YAML from "yamljs"
+import * as FileAsync from 'lowdb/adapters/FileAsync'
+import * as YAML from 'json2yaml'
 
 import * as Debug from "debug";
-const debug = Debug("scraper");
+const debug = Debug("scraper:index");
 
-const adapter = new FileSync('./src/db.json');
-const db = low(adapter);
-/*const adapter = new FileSync('./src/db.yaml', {
-  defaultValue: [],
+const adapter = new FileSync('./src/output.json');
+
+
+/*const adapter = new FileSync('./src/output.yaml', {
+  defaultValue: "",
   serialize: (array) => YAML.stringify(array),
   deserialize: (string) => YAML.parse(string)
 })*/
@@ -41,14 +43,31 @@ const run = async () => {
 
   let scraperQueue: Match[] = await Promise.all(
     [
-       await betfair.run(browser, options),
-       //williamhill.run(browser, options),
+
+      williamhill.run({
+        browser,
+        options,
+        days: ["31 Mar"],
+        state: "Italia",
+        tournaments: ["Serie A"],
+        types: ["underOver_2.5"]
+      })
     ]
   ).then(arr => arr.reduce((a, b) => a.concat(b)))
 
 
 
   console.log(JSON.stringify(scraperQueue))
+  // Set some defaults (required if your JSON file is empty)
+  const db = low(adapter);
+
+  db.defaults({ outputs: [] })
+    .write()
+
+  // Add a post
+  db.get('outputs')
+    .push(scraperQueue)
+    .write()
 
   /*if (scraperQueue.length > 0) {
     db.get("scraperQueue")

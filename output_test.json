@@ -151,4 +151,474 @@
       "link": "https://www.betfair.it/sport/football/event?eventId=28637723"
     }]
   }
+
+
+
+
+  , {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "UEFA Europa League",
+      "matchName": "Atletico Madrid, Sporting",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "rimborso pareggio",
+      "role": "Atletico Madrid",
+      "player": "Atletico Madrid",
+      "value": 1.1,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+    }, {
+      "type": "rimborso pareggio",
+      "role": "Sporting",
+      "player": "Sporting",
+      "value": 7,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+    }]
+  }, {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "UEFA Europa League",
+      "matchName": "Lazio, Red Bull Salisburgo",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "rimborso pareggio",
+      "role": "Lazio",
+      "player": "Lazio",
+      "value": 1.3,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637726"
+    }, {
+      "type": "rimborso pareggio",
+      "role": "Red Bull Salisburgo",
+      "player": "Red Bull Salisburgo",
+      "value": 3.4,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637726"
+    }]
+  }, {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "UEFA Europa League",
+      "matchName": "Arsenal, CSKA Mosca",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "rimborso pareggio",
+      "role": "Arsenal",
+      "player": "Arsenal",
+      "value": 1.11,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637724"
+    }, {
+      "type": "rimborso pareggio",
+      "role": "CSKA Mosca",
+      "player": "CSKA Mosca",
+      "value": 6.5,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637724"
+    }]
+  }, {
+    "site": "betfair",
+    "metadata": {
+      "sport": "football",
+      "tournament": "UEFA Europa League",
+      "matchName": "RB Lipsia, Marseille",
+      "date": "date",
+      "time": "time"
+    },
+    "odds": [{
+      "type": "rimborso pareggio",
+      "role": "RB Lipsia",
+      "player": "RB Lipsia",
+      "value": 1.33,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637723"
+    }, {
+      "type": "rimborso pareggio",
+      "role": "Marseille",
+      "player": "Marseille",
+      "value": 3.25,
+      "link": "https://www.betfair.it/sport/football/event?eventId=28637723"
+    }]
+  }
 ]
+
+
+[{
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "UEFA Europa League",
+    "matchName": "Atletico Madrid, Sporting",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Atletico Madrid",
+    "player": "Atletico Madrid",
+    "value": 1.1,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Sporting",
+    "player": "Sporting",
+    "value": 7,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28637725"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "UEFA Europa League",
+    "matchName": "Lazio, Red Bull Salisburgo",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Lazio",
+    "player": "Lazio",
+    "value": 1.3,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28637726"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Red Bull Salisburgo",
+    "player": "Red Bull Salisburgo",
+    "value": 3.4,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28637726"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "UEFA Europa League",
+    "matchName": "Arsenal, CSKA Mosca",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Arsenal",
+    "playe": "Arsenal",
+    "value": 1.11,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28637724"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "CSKA Mosca",
+    "player": "CSKA Mosca",
+    "value": 6.5,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28637724"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "UEFA Europa League",
+    "matchName": "RB Lipsia, Marseille",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "RB Lipsia",
+    "player": "RB Lipsia",
+    "value": 1.33,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28637723"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Marseille",
+    "player": "Marseille",
+    "value": 3.25,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28637723"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Bologna, Roma",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Bologna",
+    "player": "Bologna",
+    "value": 3.5,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622905"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Roma",
+    "player": "Roma",
+    "value": 1.28,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622905"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Fiorentina, Crotone",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Fiorentina",
+    "player": "Fiorentina",
+    "value": 1.12,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622920"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Crotone",
+    "player": "Crotone",
+    "value": 6,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622920"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Atalanta, Udinese",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Atalanta",
+    "player": "Atalanta",
+    "value": 1.11,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622908"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Udinese",
+    "player": "Udinese",
+    "value": 6.5,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622908"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Cagliari, Torino",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Cagliari",
+    "player": "Cagliari",
+    "value": 2.1,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622913"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Torino",
+    "player": "Torino",
+    "value": 1.72,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622913"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Genoa, Spal",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Genoa",
+    "player": "Genoa",
+    "value": 1.33,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622919"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Spal",
+    "player": "Spal",
+    "value": 3.25,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622919"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Inter, Verona",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Inter",
+    "player": "Inter",
+    "value": 1.02,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28641121"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Verona",
+    "player": "Verona",
+    "value": 13,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28641121"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Lazio, Benevento",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Lazio",
+    "player": "Lazio",
+    "value": 1.04,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28626939"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Benevento",
+    "player": "Benevento",
+    "value": 10,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28626939"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Chievo, Sampdoria",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Chievo",
+    "player": "Chievo",
+    "value": 1.57,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622904"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Sampdoria",
+    "player": "Sampdoria",
+    "value": 2.37,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622904"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Sassuolo, Napoli",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Sassuolo",
+    "player": "Sassuolo",
+    "value": 7,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622915"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Napoli",
+    "player": "Napoli",
+    "value": 1.1,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622915"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Juventus, Milan",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Juventus",
+    "player": "Juventus",
+    "value": 1.2,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622911"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Milan",
+    "player": "Milan",
+    "value": 4.5,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28622911"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Genoa, Cagliari",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Genoa",
+    "player": "Genoa",
+    "value": 1.28,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28646445"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Cagliari",
+    "player": "Cagliari",
+    "value": 3.5,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28646445"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Atalanta, Sampdoria",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Atalanta",
+    "player": "Atalanta",
+    "value": 1.14,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28646442"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Sampdoria",
+    "player": "Sampdoria",
+    "value": 5.5,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28646442"
+  }]
+}, {
+  "site": "betfair",
+  "metadata": {
+    "sport": "football",
+    "tournament": "Italia - Serie A",
+    "matchName": "Udinese, Fiorentina",
+    "date": "date",
+    "time": "time"
+  },
+  "odds": [{
+    "type": "rimborso pareggio",
+    "role": "Udinese",
+    "player": "Udinese",
+    "value": 2.25,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28646591"
+  }, {
+    "type": "rimborso pareggio",
+    "role": "Fiorentina",
+    "player": "Fiorentina",
+    "value": 1.61,
+    "link": "https://www.betfair.it/sport/football/event?eventId=28646591"
+  }]
+}]

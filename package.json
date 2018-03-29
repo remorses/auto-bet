@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index"
+    "start": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index "
   },
   "dependencies": {
     "@types/js-combinatorics": "^0.5.29",
@@ -18,9 +18,11 @@
     "dotenv": "^5.0.1",
     "fs": "^0.0.1-security",
     "js-combinatorics": "^0.5.3",
+    "json2yaml": "^1.1.0",
     "lodash": "^4.17.5",
     "lowdb": "^1.0.0",
     "mobx": "^4.1.0",
+    "moment": "^2.21.0",
     "puppeteer": "^1.1.0",
     "rxjs": "^5.5.7",
     "yaml": "^0.3.0",

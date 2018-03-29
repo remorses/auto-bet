@@ -6,41 +6,49 @@ import { scrapeUrls } from "./scrapeUrls"
 import { scrapeMatch } from "./scrapeMatch"
 import { login } from "./login"
 
+
+import * as Debug from "debug";
+const debug = Debug("scraper:betfair:index");
+
 // XXX main logic
-const run = async (browser, options): Promise<Match[]> => {
+const run = async ({ browser, options, days, state, tournaments, types }): Promise<Match[]> => {
+  let matches: Match[] = []
+  try {
+    const page = await browser.newPage();
+    await page.setViewport({ width: options.width, height: options.height });
+    await abortMediaRequests(page)
 
-  const page = await browser.newPage();
-  await page.setViewport({ width: options.width, height: options.height });
-  await abortMediaRequests(page)
+    const urls: string[] = []
+    // get the matches urls of a determinated tournament and day
 
-  // get the matches urls of a determinated tournament and day
-  const urls: string[] = await scrapeUrls({
-    page,
-    site: "https://www.betfair.it/sport/football",
-    day: "giovedì, 05 aprile",
-    state: "UEFA Europa League",
-    tournament: "UEFA Europa League"
-  })
-
-  const matches: Match[] = await Promise.all(urls.map(url =>
-    scrapeMatch({
-      browser,
-      url,
-      types: ["Rimborso in Caso di Pareggio",'handicapCorners_["-1","+2"]']
-    }))
-  ).then(arr => arr.reduce((acc, curr) => acc.concat(curr), []))
-
-/*
-  // testing purpose
-  const matches = [...await scrapeMatch({
-    browser,
-    url: "https://www.betfair.it/sport/football/event?eventId=28642064",
-    types: ['handicapCorners_["-1","+2"]']
-  })]*/
+      urls.push(...await scrapeUrls({
+        page,
+        days,
+        state,
+        tournaments,
+        site: "https://www.betfair.it/sport/football",
+      }))
 
 
-  // await browser.close()
-  return matches
+    matches = await Promise.all(urls.map(url =>
+      scrapeMatch({
+        browser,
+        url,
+        types
+      }))).then(arr => arr.reduce((acc, curr) => acc.concat(curr), []))
+    /*
+      // testing purpose
+      const matches = [...await scrapeMatch({
+        browser,
+        url: "https://www.betfair.it/sport/football/event?eventId=28642064",
+        types: ['handicapCorners_["-1","+2"]']
+      })]*/
+  } catch (e) {
+    debug(e)
+  } finally {
+    return matches
+    // await browser.close()
+  }
 
 }
 export { run }

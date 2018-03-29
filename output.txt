@@ -1,0 +1,223 @@
+2018-03-29T12:05:37.796Z scraper:index start
+2018-03-29T12:05:45.946Z scraper:betfair:scrapeUrls [ 'https://www.betfair.it/sport/football/event?eventId=28637725',
+  'https://www.betfair.it/sport/football/event?eventId=28637726',
+  'https://www.betfair.it/sport/football/event?eventId=28637724',
+  'https://www.betfair.it/sport/football/event?eventId=28637723' ]
+2018-03-29T12:05:51.024Z scraper:helpers players, before parse :  [ 'RB Lipsia', 'Marseille' ]
+2018-03-29T12:05:51.024Z scraper:helpers players, before parse :  [ 'Atletico Madrid', 'Sporting' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:7797) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 3)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+2018-03-29T12:05:51.041Z scraper:helpers odds, with getChildren :  [ 1.33, 3.25 ]
+2018-03-29T12:05:51.042Z scraper:helpers odds, with getChildren :  [ 1.1, 7 ]
+2018-03-29T12:05:51.131Z scraper:helpers players, before parse :  [ 'Arsenal', 'CSKA Mosca' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 6)
+2018-03-29T12:05:51.137Z scraper:helpers odds, with getChildren :  [ 1.11, 6.5 ]
+2018-03-29T12:05:52.070Z scraper:helpers players, before parse :  [ 'Lazio', 'Red Bull Salisburgo' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 7)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 8)
+2018-03-29T12:05:52.077Z scraper:helpers odds, with getChildren :  [ 1.3, 3.4 ]
+2018-03-29T12:05:57.855Z scraper:betfair:scrapeUrls [ 'https://www.betfair.it/sport/football/event?eventId=28622905',
+  'https://www.betfair.it/sport/football/event?eventId=28622920',
+  'https://www.betfair.it/sport/football/event?eventId=28622908',
+  'https://www.betfair.it/sport/football/event?eventId=28622913',
+  'https://www.betfair.it/sport/football/event?eventId=28622919',
+  'https://www.betfair.it/sport/football/event?eventId=28641121',
+  'https://www.betfair.it/sport/football/event?eventId=28626939',
+  'https://www.betfair.it/sport/football/event?eventId=28622904',
+  'https://www.betfair.it/sport/football/event?eventId=28622915',
+  'https://www.betfair.it/sport/football/event?eventId=28622911',
+  'https://www.betfair.it/sport/football/event?eventId=28646445',
+  'https://www.betfair.it/sport/football/event?eventId=28646442',
+  'https://www.betfair.it/sport/football/event?eventId=28646591' ]
+2018-03-29T12:06:02.724Z scraper:helpers players, before parse :  [ 'Chievo', 'Sampdoria' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 9)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 10)
+2018-03-29T12:06:02.740Z scraper:helpers odds, with getChildren :  [ 1.57, 2.37 ]
+2018-03-29T12:06:03.314Z scraper:helpers players, before parse :  [ 'Fiorentina', 'Crotone' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 11)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 12)
+2018-03-29T12:06:03.327Z scraper:helpers odds, with getChildren :  [ 1.12, 6 ]
+2018-03-29T12:06:03.339Z scraper:helpers players, before parse :  [ 'Lazio', 'Benevento' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 13)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 14)
+2018-03-29T12:06:03.353Z scraper:helpers odds, with getChildren :  [ 1.04, 10 ]
+2018-03-29T12:06:03.391Z scraper:helpers players, before parse :  [ 'Juventus', 'Milan' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 15)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 16)
+2018-03-29T12:06:03.400Z scraper:helpers odds, with getChildren :  [ 1.2, 4.5 ]
+2018-03-29T12:06:03.413Z scraper:helpers players, before parse :  [ 'Genoa', 'Cagliari' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 17)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 18)
+2018-03-29T12:06:03.419Z scraper:helpers odds, with getChildren :  [ 1.28, 3.5 ]
+2018-03-29T12:06:03.521Z scraper:helpers players, before parse :  [ 'Atalanta', 'Udinese' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 19)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 20)
+2018-03-29T12:06:03.532Z scraper:helpers odds, with getChildren :  [ 1.11, 6.5 ]
+2018-03-29T12:06:04.019Z scraper:helpers players, before parse :  [ 'Genoa', 'Spal' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 21)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 22)
+2018-03-29T12:06:04.027Z scraper:helpers odds, with getChildren :  [ 1.33, 3.25 ]
+2018-03-29T12:06:04.124Z scraper:helpers players, before parse :  [ 'Udinese', 'Fiorentina' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 23)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 24)
+2018-03-29T12:06:04.131Z scraper:helpers odds, with getChildren :  [ 2.25, 1.61 ]
+2018-03-29T12:06:04.173Z scraper:helpers players, before parse :  [ 'Bologna', 'Roma' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 25)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 26)
+2018-03-29T12:06:04.179Z scraper:helpers odds, with getChildren :  [ 3.5, 1.28 ]
+2018-03-29T12:06:04.361Z scraper:helpers players, before parse :  [ 'Atalanta', 'Sampdoria' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 27)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 28)
+2018-03-29T12:06:04.368Z scraper:helpers odds, with getChildren :  [ 1.14, 5.5 ]
+2018-03-29T12:06:04.490Z scraper:helpers players, before parse :  [ 'Inter', 'Verona' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 29)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 30)
+2018-03-29T12:06:04.497Z scraper:helpers odds, with getChildren :  [ 1.02, 13 ]
+2018-03-29T12:06:04.780Z scraper:helpers players, before parse :  [ 'Sassuolo', 'Napoli' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 31)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 32)
+2018-03-29T12:06:04.788Z scraper:helpers odds, with getChildren :  [ 7, 1.1 ]
+2018-03-29T12:06:05.789Z scraper:helpers players, before parse :  [ 'Cagliari', 'Torino' ]
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:49:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 33)
+(node:7797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'trim' of undefined
+    at page.$.then.then.then.s (/Users/morse/Documents/GitHub/auto-bet/src/scraper/betfair/scrapeCases.ts:54:18)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:160:7)
+(node:7797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 34)
+2018-03-29T12:06:05.796Z scraper:helpers odds, with getChildren :  [ 2.1, 1.72 ]

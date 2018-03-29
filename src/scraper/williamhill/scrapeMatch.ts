@@ -9,7 +9,7 @@ import {
   getHref,
   parseChildren,
   getContent,
-  whenUpdated,
+  //whenUpdated,
   getChildContent,
   findParentElement,
   waitForLoad,
@@ -17,6 +17,9 @@ import {
   findElement,
   abortMediaRequests
 } from "@scraper/helpers"
+import { singleLine, handicapCorners, } from "./scrapeCases"
+import { rawToPure, pureToRaw } from "@aliases/index"
+
 
 
 async function scrapeMatch({ browser, url, types }: { browser: Browser, url: string, types: string[] }) {
@@ -46,59 +49,35 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
     // find the table element, with right type
     const matchTable = await findParentElement({
       page,
-      content: type,
+      content: pureToRaw("oddType", type, "williamhill"),
       child: "  table > thead > tr > th > span",
       parent: "div#primaryCollectionContainer  div.marketHolderExpanded "
     }).catch(logger("error")) // TODO, undefined
     console.log("matchTable", !!matchTable) // TODO solo esistenza
 
+    if (!matchTable) return
 
-    // tournament name
-    const tournament: string = await page.$("ul#breadcrumb li:nth-child(4) > a")
-      .then(resolveIf)
-      .then(getContent)
+    switch (type) {
+      case "underOver_2.5":
+      case "rigore_yesNo":
+        matches.push(await singleLine({ page, matchTable, type, url, doRoles: true }))
+        break
+      case "Rimborso in Caso di Pareggio":
+      case "outcome":
+        matches.push(await singleLine({ page, matchTable, type, url }))
+        break
+      case 'handicapCorners_["-1","+2"]':
+      case 'handicapCorners_["-2","+3"]':
+      case 'handicapCorners_["-3","+4"]':
+      case 'handicapCorners_["-4","+5"]':
+      case 'handicapCorners_["+2","-1"]':
+      case 'handicapCorners_["+3","-2"]':
+      case 'handicapCorners_["+4","-3"]':
+      case 'handicapCorners_["+5","-4"]':
+        // matches.push(... await handicapCorners({ page, matchTable, type, url }))
+        break
 
-
-    // get the odds, in an array
-    const oddValues: number[] = await getChildren({
-      page,
-      element: matchTable,
-      selector: "table > tbody > tr > td > div > div.eventprice"
-    }).then(parseChildren)//.then(a => a.map(t => parseFloat(t.trim())))
-      .then(logger("odds, with getChildren"))
-
-
-    // get the odd roles (handicap value, under or over...)
-    const roles: string[] = await getChildren({
-      page,
-      element: <any>matchTable,
-      selector: "table > tbody > tr > td:nth-child(1) > div > div.eventselection"
-    }).then(parseChildren)
-
-
-    const players = await page.$("div#contentHead > h2")
-      .then(resolveIf)
-      .then(a => getContent(a))
-      .then(s => s.split("-"))
-      .then(arr => arr.slice(0, -1))
-      .then(arr => arr.map(s => s.trim()))
-
-    // XXX constructor
-    const metadata = {
-      sport: "football",
-      tournament: tournament,
-      matchName: players.join(", "),
-      date: "date",
-      time: "time",
     }
-    const odds = oddsConstructor({ type, oddValues, roles, url })
-    const match = {
-      site: "williamhill",
-      metadata,
-      odds
-    }
-
-    matches.push(match)
   }))
   return matches
 }
