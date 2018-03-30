@@ -21,13 +21,13 @@ const run = async ({ browser, options, days, state, tournaments, types }): Promi
     const urls: string[] = []
     // get the matches urls of a determinated tournament and day
 
-      urls.push(...await scrapeUrls({
-        page,
-        days,
-        state,
-        tournaments,
-        site: "https://www.betfair.it/sport/football",
-      }))
+    urls.push(...await scrapeUrls({
+      page,
+      days,
+      state,
+      tournaments,
+      site: "https://www.betfair.it/sport/football",
+    }))
 
 
     matches = await Promise.all(urls.map(url =>

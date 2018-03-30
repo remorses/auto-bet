@@ -1,11 +1,18 @@
 export const aliases = {
   "oddType": {
-    "underOver_2.5": {
-      betfair: "Più/Meno",
-      williamhill: "Over/Under 2.5 Goal"
-    },
+    "underOver_0.5": { betfair: "Più/Meno", williamhill: "Over/Under 0.5 Goal" },
+    "underOver_1.5": { betfair: "Più/Meno", williamhill: "Over/Under 1.5 Goal" },
+    "underOver_2.5": { betfair: "Più/Meno", williamhill: "Over/Under 2.5 Goal" },
+    "underOver_3.5": { betfair: "Più/Meno", williamhill: "Over/Under 3.5 Goal" },
+    "underOver_4.5": { betfair: "Più/Meno", williamhill: "Over/Under 4.5 Goal" },
+    "underOver_5.5": { betfair: "Più/Meno", williamhill: "Over/Under 5.5 Goal" },
+    "underOver_6.5": { betfair: "Più/Meno", williamhill: "Over/Under 6.5 Goal" },
+    "underOver_7.5": { betfair: "Più/Meno", williamhill: "Over/Under 7.5 Goal" },
     "rimborso pareggio": {
       betfair: "Rimborso in Caso di Pareggio"
+    },
+    "goal_yesNo": {
+      betfair: "Mercati Segnano entrambe le squadre"
     },
     'handicapCorners_["-1","+2"]': { betfair: "Handicap calci d'angolo" },
     'handicapCorners_["-2","+3"]': { betfair: "Handicap calci d'angolo" },
@@ -15,7 +22,7 @@ export const aliases = {
     'handicapCorners_["+3","-2"]': { betfair: "Handicap calci d'angolo" },
     'handicapCorners_["+4","-3"]': { betfair: "Handicap calci d'angolo" },
     'handicapCorners_["+5","-4"]': { betfair: "Handicap calci d'angolo" },
-    "rigore_yesNo": { betfair: "Rigore Si/No" },
+    "rigore_yesNo": { betfair: "Rigore Si/No", williamhill: "Rigore Si/No" },
   },
   "tournament": {
     "serie A": {
@@ -24,12 +31,12 @@ export const aliases = {
     }
   },
   "role": {
-    "under 2.5": {
+    "under_2.5": {
       williamhill: "Under 2.5",
       betfair: "Under 2.5"
     },
-    "yes": {betfair: "Sì"},
-    "no": {betfair: "No"}
+    "yes": { betfair: "Sì" },
+    "no": { betfair: "No" }
   },
   "dayWord": {
     "sabato": {

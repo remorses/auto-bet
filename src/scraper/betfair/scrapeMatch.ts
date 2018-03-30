@@ -7,7 +7,7 @@ import {
   waitForLoad,
   logger
 } from "@scraper/helpers"
-import { singleLine, handicapCorners, } from "./scrapeCases"
+import { singleLine, handicapCorners, goalNoGoal, underOvers } from "./scrapeCases"
 
 import * as Debug from "debug";
 const debug = Debug("scraper:betfair:scrapeMatch");
@@ -18,6 +18,9 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
 
   const page = await browser.newPage();
   await page.goto(url);
+
+
+
   let matches: Match[] = []
   // await waitForLoad(page)
 
@@ -38,14 +41,13 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
       // debug("matchTable", !!matchTable) // TODO solo esistenza
       await waitForLoad(page)
 
-      if (!matchTable) return
+      if (!matchTable) throw new Error(`can't find matchTable for` + type)
 
       switch (type) {
-        case "underOver_2.5":
         case "rigore_yesNo":
           matches.push(await singleLine({ page, matchTable, type, url, doRoles: true }))
           break
-        case "Rimborso in Caso di Pareggio":
+        case "RimborsoPareggio":
         case "outcome":
           matches.push(await singleLine({ page, matchTable, type, url }))
           break
@@ -59,10 +61,25 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
         case 'handicapCorners_["+5","-4"]':
           matches.push(... await handicapCorners({ page, matchTable, type, url }))
           break
+        case "underOver_0.5":
+        case "underOver_1.5":
+        case "underOver_2.5":
+        case "underOver_3.5":
+        case "underOver_4.5":
+        case "underOver_5.5":
+        case "underOver_6.5":
+        case "underOver_7.5":
+          matches.push(await underOvers({ page, matchTable, type, url }))
+          break
+        case "goal_yesNo":
+          matches.push(await goalNoGoal({ page, matchTable, type, url }))
+          break
+
+
+
       }
     } catch (e) {
-      debug("Error: ", e)
-      return
+      debug(e)
     }
 
   }))

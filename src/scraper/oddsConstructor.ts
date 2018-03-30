@@ -8,7 +8,7 @@ import { rawToPure } from "@aliases/index"
 const float = (val) => typeof val === "string" ? parseFloat(val.trim()) : val
 
 
-function oddsConstructor({ players, type, oddValues, roles, url }: { players?: string[] | null[], type, oddValues, roles?: string[], url }) {
+function oddsConstructor({ players, type, oddValues, roles, url }: { players: string[] | null[], type, oddValues, roles?: string[], url }) {
   let odds: Odd[] = []
   if (!players) players = [null, null, null,]
 

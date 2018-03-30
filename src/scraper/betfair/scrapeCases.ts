@@ -106,12 +106,12 @@ export const singleLine = async ({ page, matchTable, type, url, doRoles = false 
 /*
 quando ci sono 2 squadre opposte con lo stesso handicap queste saranno aggiunte nell
 */
-export const handicapCorners = async ({ page, matchTable, type, url }): Promise<Match[]> => {
+export const handicapCorners = async ({ page, matchTable, type, url }: { page: Page, matchTable: ElementHandle, type, url }): Promise<Match[]> => {
 
   // get the players in an array of three
   const players = [
-    await page.$("td.home-runner").then(getContent),
-    await page.$("td.away-runner").then(getContent)]
+    await page.$("td.home-runner").then(resolveIf).then(getContent),
+    await page.$("td.away-runner").then(resolveIf).then(getContent)]
 
   // tournament
   const tournament: string = await page.$("div#zone-leftcolumn div:nth-child(1) > div > div > div > a > span")
@@ -171,48 +171,141 @@ export const handicapCorners = async ({ page, matchTable, type, url }): Promise<
 
 }
 
+export const underOvers = async ({ page, matchTable, type, url }: { page: Page, matchTable: ElementHandle, type, url }): Promise<Match> => {
 
-export const multipleLines = async ({ page, matchTable, type, url }) => {
   // get the players in an array of three
-  const players: string[] = await getChildContent({
-    page,
-    parent: matchTable,
-    selector: " span.runner-name"
-  }).then(logger("players, before parse")).catch(logger("error")) // TODO niente, array vuoto
+  const players = [
+    await page.$("td.home-runner").then(resolveIf).then(getContent),
+    await page.$("td.away-runner").then(resolveIf).then(getContent)]
 
   // tournament
   const tournament: string = await page.$("div#zone-leftcolumn div:nth-child(1) > div > div > div > a > span")
     .then(a => a ? getContent(a) : "Error")
 
+
+  // prendo la variante di scommessa
+  const oddVariant = parseFloat(type.split("_")[1])   // esempio "underOver_2.5
+
+  let nthLi
+  switch (oddVariant) {
+    case 0.5:
+      nthLi = 1
+      break
+    case 1.5:
+      nthLi = 2
+      break
+    case 2.5:
+      nthLi = 3
+      break
+    case 3.5:
+      nthLi = 4
+      break
+    case 4.5:
+      nthLi = 5
+      break
+    case 5.5:
+      nthLi = 6
+      break
+    case 6.5:
+      nthLi = 7
+      break
+    case 7.5:
+      nthLi = 8
+      break
+  }
+
+  const roles = ["+" + oddVariant, "-" + oddVariant]
   // get the odds, in an array
   const oddValues: number[] = await getChildren({
     page,
     element: matchTable,
-    selector: "ul > li > a > span.ui-runner-price"
+    selector: `div > div > div > div:nth-child(${nthLi}) > div > ul > li.runner.runner-group-0 > a > span`
   }).then(parseChildren).then(a => a.map(t => parseFloat(t.trim())))
     .then(logger("odds, with getChildren"))
+    .catch(e => { throw new Error("can't get odds") })
 
   /*
-      // get the odd types ( handicap value)
-      const handicapTypes: string[] = await getChildren({
-        page,
-        element: <any>matchTable,
-        selector: "div.minimarketview-content.ui-market.ui-expanded.ui-market-open > ul > li > span.ui-runner-handicap"
-      }).then(parseChildren)
-    */
+      let role = await rightRow.$(" span.runner-name")
+        .then(getContent)
+        .then(a => a.trim())
+        .then(rol => rol + oddVariant) // Es. Bologna +2  // così non può accadere che raggruppo squadre opposte ma con lo stesso handicap
+        .catch(debug)*/
 
   // XXX Match constructor
   const metadata = {
     sport: "football",
     tournament: tournament,
     matchName: players.join(", "),
-    date: "date",
+    date: "date", // dayNumber + "_" + monthWord,
     time: "time",
   }
-  const odds = oddsConstructor({ players, type, oddValues, url })
+  const odds = oddsConstructor({ players, roles, type, oddValues, url })
   const match = {
     site: "betfair",
     metadata,
     odds
   }
+
+  return match
+
+}
+
+export const goalNoGoal = async ({ page, matchTable, type, url, }: { page, matchTable, type, url, doRoles?: boolean }): Promise<Match> => {
+  // get the players in an array of three
+
+  // get the players in an array of three
+  const players = [
+    await page.$("td.home-runner").then(getContent),
+    await page.$("td.away-runner").then(getContent)]
+  /*
+    const dayNumber = await page.$("div#zone-leftcolumn div > div > div > span.ui-when-event-inprogress > span")
+      .then(getContent)
+      .then(debug)
+      .then(s => s !== "Live" ? s.trim().split(" ")[1] : Date.now())
+      .catch(debug)
+
+    const monthWord = await page.$("div#zone-leftcolumn div > div > div > span.ui-when-event-inprogress > span")
+      .then(getContent)
+      .then(s => s !== "Live" ? s.trim().split(" ")[2] : "")
+      .then(raw => rawToPure("monthWord", raw, "betfair"))
+      .catch(debug)*/
+
+  // tournament
+  const tournament: string = await page.$("div#zone-leftcolumn div:nth-child(1) > div > div > div > a > span")
+    .then(a => a ? getContent(a) : "Error")
+
+
+  // get the odds, in an array
+  const oddValues: number[] = await getChildren({
+    page,
+    element: matchTable,
+    selector: "ul > li:nth-child(1) > ul > li.runner > a > span"
+  }).then(parseChildren).then(a => a.map(t => parseFloat(t.trim())))
+    .then(logger("odds, with getChildren"))
+
+  // XXX Match constructor
+  const metadata = {
+    sport: "football",
+    tournament: tournament,
+    matchName: players.join(", "),
+    date: "date", // dayNumber + "_" + monthWord,
+    time: "time",
+  }
+
+  let roles = ["yes", "no"]
+
+  let odds = oddsConstructor({
+    players,
+    type,
+    oddValues,
+    url,
+    roles
+  })
+
+  const match = {
+    site: "betfair",
+    metadata,
+    odds
+  }
+  return match
 }

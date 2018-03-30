@@ -105,6 +105,20 @@ export const findElement = async ({ page, content, selector }: { page: Page, con
 }
 
 
+export const findElementFromElement = async ({ page, content, selector, element }: { page: Page, content: string, selector: string, element: ElementHandle }) => {
+  await page.waitForSelector(selector)
+  const elements: ElementHandle[] = await element.$$(selector)
+  if (elements.length < 1) throw new Error(`can't proceed findElement for ${content}, no elements`)
+  for (let element of elements) {
+    let inner = await getContent(element)
+    //  debug(inner.trim())
+    if (inner.trim() === content) {
+    // debug(inner, ", findElement");
+    return element }
+  }
+}
+
+
 export const getContent = async (element: ElementHandle): Promise<string> => {
   const inner = await  element.getProperty("innerHTML")
   if (!inner) throw new Error(`can't proceed getContent, no inner`)
