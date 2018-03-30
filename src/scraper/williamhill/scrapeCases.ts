@@ -91,7 +91,7 @@ export const singleLine = async ({ page, matchTable, type, url, doRoles = false 
   return match
 }
 
-export const handicapCorners = async ({ page, matchTable, type, url }: { page, matchTable, type, url}): Promise<Match> => {
+export const handicapCorners = async ({ page, matchTable, type, url }: { page, matchTable, type, url }): Promise<Match> => {
 
 
   const oddVariants: any[] = JSON.parse(type.split("_")[1])  // esempio "handicapCorner_['+3','-2']"  => ['+3','-2']
@@ -140,23 +140,13 @@ export const handicapCorners = async ({ page, matchTable, type, url }: { page, m
     date: "date",
     time: "time",
   }
-  let odds
-  if (!doRoles) {
-    odds = oddsConstructor({
-      players,
-      type,
-      oddValues,
-      url,
-    })
-  } else {
-    odds = oddsConstructor({
-      players,
-      type,
-      oddValues,
-      url,
-      roles
-    })
-  }
+  let odds = oddsConstructor({
+    players,
+    type,
+    roles,
+    oddValues,
+    url,
+  })
   const match = {
     site: "williamhill",
     metadata,
