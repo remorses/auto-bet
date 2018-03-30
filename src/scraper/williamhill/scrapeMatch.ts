@@ -59,11 +59,18 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
       if (!matchTable) throw new Error("can't find matchTable for " + type)
 
       switch (type) {
-        case "underOver_2.5":
         case "rigore_yesNo":
+        case "goal_yesNo":
+        case "underOver_0.5":
+        case "underOver_1.5":
+        case "underOver_2.5":
+        case "underOver_3.5":
+        case "underOver_4.5":
+        case "underOver_5.5":
+        case "underOver_6.5":
+        case "underOver_7.5":
           matches.push(await singleLine({ page, matchTable, type, url, doRoles: true }))
           break
-        case "Rimborso in Caso di Pareggio":
         case "outcome":
           matches.push(await singleLine({ page, matchTable, type, url }))
           break
@@ -75,7 +82,7 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
         case 'handicapCorners_["+3","-2"]':
         case 'handicapCorners_["+4","-3"]':
         case 'handicapCorners_["+5","-4"]':
-           matches.push( await handicapCorners({ page, matchTable, type, url }))
+          matches.push(await handicapCorners({ page, matchTable, type, url }))
           break
       }
 

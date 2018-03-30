@@ -12,7 +12,8 @@ export const aliases = {
       betfair: "Rimborso in Caso di Pareggio"
     },
     "goal_yesNo": {
-      betfair: "Mercati Segnano entrambe le squadre"
+      betfair: "Mercati Segnano entrambe le squadre",
+      williamhill: "Segneranno Entrambe le Squadre?"
     },
     'handicapCorners_["-1","+2"]': { betfair: "Handicap calci d'angolo" },
     'handicapCorners_["-2","+3"]': { betfair: "Handicap calci d'angolo" },
