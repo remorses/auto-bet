@@ -10,12 +10,12 @@ const rawToPure = (category: Category, raw: string, site?: Site, ): string => {
   if (!site) {
     for (let [key, obj] of Object.entries(aliases[category])) {
       for (let alias of Object.values(obj)) {
-        if (alias == raw.trim()) return key
+        if (alias === raw.trim()) return key
       }
     }
   } else {
     for (let [key, obj] of Object.entries(aliases[category])) {
-      if (obj[site] == raw.trim()) return key
+      if (obj[site] === raw.trim()) return key
     }
   } return raw
 }

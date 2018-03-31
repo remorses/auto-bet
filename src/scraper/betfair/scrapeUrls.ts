@@ -23,7 +23,7 @@ import * as Debug from "debug";
 const debug = Debug("scraper:betfair:scrapeUrls");
 
 
-async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page, site, days: string[], state, tournaments: string[] }): Promise<string[]> {
+async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page, site, days: string[] | "*", state, tournaments: string[] }): Promise<string[]> {
   let hrefs: string[] = []
   try {  // go to football
     for (let tournament of tournaments) {
@@ -52,20 +52,26 @@ async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page
         .then((a) => a.click())
       // get the links of matches
       await waitForLoad(page)
-      for (let day of days) {
-        const dayTable = await findParentElement({
-          page,
-          content: day,
-          child: "div > span.section-header-label",
-          parent: "div#zone-main li "
-        })
-        if (!dayTable) throw new Error("no day Table")
-        const links = await getChildren({
-          page,
-          element: dayTable,
-          selector: "ul > li > div > div.avb-col.avb-col-markets > a.ui-nav.markets-number-arrow.ui-top.event-link"
-        }).then(arr => arr.map(getHref))
-        hrefs.push(...await Promise.all(links))
+
+      if (days === "*") {
+        const links = await page.$$("div#zone-main li l > li > div > div.avb-col.avb-col-markets > a.ui-nav.markets-number-arrow.ui-top.event-link ")
+        hrefs.push(... await Promise.all(links.map(link => link.getProperty("href").then(href => href.jsonValue()))))
+      } else {
+        for (let day of days) {
+          const dayTable = await findParentElement({
+            page,
+            content: day,
+            child: "div > span.section-header-label",
+            parent: "div#zone-main li "
+          })
+          if (!dayTable) throw new Error("no day Table")
+          const links = await getChildren({
+            page,
+            element: dayTable,
+            selector: "ul > li > div > div.avb-col.avb-col-markets > a.ui-nav.markets-number-arrow.ui-top.event-link"
+          }).then(arr => arr.map(getHref))
+          hrefs.push(...await Promise.all(links))
+        }
       }
     }
   } catch (e) { debug(e) }

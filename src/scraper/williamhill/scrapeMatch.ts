@@ -32,13 +32,16 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
 
   await page.$("a#collection25Show")
     .then(resolveIf)
-    .then(a => a.click())
+    .then(a => a ? a.click() : a)
+  await page.$("a#collection297Show")
+    .then(resolveIf)
+    .then(a => a ? a.click() : a)
   await page.$("a#collection26Show")
     .then(resolveIf)
-    .then(a => a.click())
+    .then(a => a ? a.click() : a)
   await page.$("a#collection178Show")
     .then(resolveIf)
-    .then(a => a.click())
+    .then(a => a ? a.click() : a)
   await waitForLoad(page)
 
 
@@ -84,9 +87,11 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
         case 'handicapCorners_["+5","-4"]':
           matches.push(await handicapCorners({ page, matchTable, type, url }))
           break
+        default:
+          break
       }
 
-    } catch (e) { debug(e) }
+    } catch (e) { debug(e); return }
   }))
   return matches
 }

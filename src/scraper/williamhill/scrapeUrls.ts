@@ -19,7 +19,7 @@ import {
 } from "@scraper/helpers"
 
 
-async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page, site, days: string[], state, tournaments: string[] }): Promise<string[]> {
+async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page, site, days: string[] | "*", state, tournaments: string[] }): Promise<string[]> {
 
   let hrefs: string[] = []
 
@@ -51,21 +51,25 @@ async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page
     }
     await resolveIf(tournamentButton).then((a) => a.click())
     await page.waitForNavigation({ waitUntil: "domcontentloaded" })
-
-    for (let day of days) {
-      // get the links of matches
-      // await waitForLoad(page)
-      let links: ElementHandle[] = []
-      const allMatches = await page.$$("div#tup_type_1_mkt_grps tr ")
-      for (let match of allMatches) {
-        if (!match) continue
-        const date = await match.$("td:nth-child(1) > span")
-        const link = await match.$("td:nth-child(3) > a")
-        if (!date || !link) continue
-        console.log(await getContent(date))
-        if (await getContent(date) === day) links.push(link)
-      }
+    if (days === "*") {
+      const links = await page.$$("div#tup_type_1_mkt_grps tr td:nth-child(3) > a")
       hrefs.push(... await Promise.all(links.map(link => link.getProperty("href").then(href => href.jsonValue()))))
+    } else {
+      for (let day of days) {
+        // get the links of matches
+        // await waitForLoad(page)
+        let links: ElementHandle[] = []
+        const allMatches = await page.$$("div#tup_type_1_mkt_grps tr ")
+        for (let match of allMatches) {
+          if (!match) continue
+          const date = await match.$("td:nth-child(1) > span")
+          const link = await match.$("td:nth-child(3) > a")
+          if (!date || !link) continue
+          console.log(await getContent(date))
+          if (await getContent(date) === day) links.push(link)
+        }
+        hrefs.push(... await Promise.all(links.map(link => link.getProperty("href").then(href => href.jsonValue()))))
+      }
     }
   }
   console.log(hrefs)

@@ -113,7 +113,8 @@ export const handicapCorners = async ({ page, matchTable, type, url }: { page, m
   const roles: string[] = []
 
   for (let [index, oddVariant] of oddVariants.entries()) {
-    const content = players[index] + " " + oddVariant
+    const content = players[index] + " " + oddVariant + " corner" // "Bologna -5 corner"
+    debug(content)
     const rightRow = await findParentElementFromElement({
       page,
       grandParent: matchTable,
@@ -121,6 +122,7 @@ export const handicapCorners = async ({ page, matchTable, type, url }: { page, m
       content,
       child: " div.eventselection"
     })
+    debug("rightRow handicapCorners ", !!rightRow)
     const oddValue = await rightRow.$("div.eventprice")
       .then(getContent)
       .then(parseFloat)

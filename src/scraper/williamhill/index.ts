@@ -6,6 +6,8 @@ import { scrapeUrls } from "./scrapeUrls"
 import { scrapeMatch } from "./scrapeMatch"
 import { login } from "./login"
 
+import * as Debug from "debug";
+const debug = Debug("scraper:williamhill:index");
 
 
 
@@ -17,22 +19,23 @@ const run = async ({ browser, options, days, state, tournaments, types }): Promi
   await page.setViewport({ width: options.width, height: options.height });
   //await abortMediaRequests(page)
 
-  // get the matches urls of a determinated tournament and day
-  const urls: string[] = await scrapeUrls({
-    page,
-    days,
-    state,
-    tournaments,
-    site: "http://sports.williamhill.it/bet_ita/it/betting/y/5/et/Calcio.html",
-  })
+  try {  // get the matches urls of a determinated tournament and day
+    const urls: string[] = await scrapeUrls({
+      page,
+      days,
+      state,
+      tournaments,
+      site: "http://sports.williamhill.it/bet_ita/it/betting/y/5/et/Calcio.html",
+    })
 
-  matches = await Promise.all(urls.map(url =>
-    scrapeMatch({
-      browser,
-      url,
-      types
-    }))
-  ).then(arr => arr.reduce((acc, curr) => acc.concat(curr), []))
+    matches = await Promise.all(urls.map(url =>
+      scrapeMatch({
+        browser,
+        url,
+        types
+      }))
+    ).then(arr => arr.reduce((acc, curr) => acc.concat(curr), []))
+  } catch (e) { debug(e) }
 
   /*
 const matches: Match[] = await scrapeMatch({
