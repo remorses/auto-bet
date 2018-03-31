@@ -54,7 +54,7 @@ async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page
       await waitForLoad(page)
 
       if (days === "*") {
-        const links = await page.$$("div#zone-main li l > li > div > div.avb-col.avb-col-markets > a.ui-nav.markets-number-arrow.ui-top.event-link ")
+        const links = await page.$$("div#zone-main li ul > li > div > div.avb-col.avb-col-markets > a.ui-nav.markets-number-arrow.ui-top.event-link ")
         hrefs.push(... await Promise.all(links.map(link => link.getProperty("href").then(href => href.jsonValue()))))
       } else {
         for (let day of days) {

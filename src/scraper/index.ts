@@ -44,14 +44,22 @@ const run = async () => {
   let scraperQueue: Match[] = await Promise.all(
     [
 
-      williamhill.run({
+    /*  williamhill.run({
         browser,
         options,
         days: "*",
         state: "Italia",
         tournaments: ["Serie A"],
         types: ["underOver_2.5", "underOver_1.5", "rigore_yesNo", "goal_yesNo", 'handicapCorners_["-4","+5"]']
-      })
+      }),*/
+      betfair.run({
+        browser,
+        options,
+        days: "*",
+        state: "Italia",
+        tournaments: ["Italia - Serie A"],
+        types: ["underOver_2.5", "underOver_1.5", "rigore_yesNo", "goal_yesNo", 'handicapCorners_["-4","+5"]']
+      }),
     ]
   ).then(arr => arr.reduce((a, b) => a.concat(b)))
 

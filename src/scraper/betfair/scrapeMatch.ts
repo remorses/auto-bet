@@ -41,7 +41,7 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
       // debug("matchTable", !!matchTable) // TODO solo esistenza
       await waitForLoad(page)
 
-      if (!matchTable) throw new Error(`can't find matchTable for` + type)
+      if (!matchTable) throw new Error(`can't find matchTable for ` + type)
 
       switch (type) {
         case "rigore_yesNo":
