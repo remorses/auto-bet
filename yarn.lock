@@ -31,6 +31,10 @@
     "@types/events" "*"
     "@types/node" "*"
 
+"@types/ramda@^0.25.21":
+  version "0.25.21"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.25.21.tgz#3399ac49ea99253c7c308916960b65058a1d63c4"
+
 "@types/yamljs@^0.2.30":
   version "0.2.30"
   resolved "https://registry.yarnpkg.com/@types/yamljs/-/yamljs-0.2.30.tgz#d034e1d329e46e8d0f737c9a8db97f68f81b5382"
@@ -284,6 +288,10 @@ puppeteer@^1.2.0:
     proxy-from-env "^1.0.0"
     rimraf "^2.6.1"
     ws "^3.0.0"
+
+ramda@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
 
 readable-stream@^2.2.2:
   version "2.3.5"

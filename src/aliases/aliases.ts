@@ -104,3 +104,7 @@ export const aliases = {
     },
   }
 }
+
+export const typesNRoles = {
+""
+}

@@ -13,12 +13,12 @@ const debug = Debug("scraper:betfair:index");
 // XXX main logic
 const run = async ({ browser, options, days, state, tournaments, types }): Promise<Match[]> => {
   let matches: Match[] = []
+  const page = await browser.newPage();
+  await page.setViewport({ width: options.width, height: options.height });
+  await abortMediaRequests(page)
+  const urls: string[] = []
   try {
-    const page = await browser.newPage();
-    await page.setViewport({ width: options.width, height: options.height });
-    await abortMediaRequests(page)
 
-    const urls: string[] = []
     // get the matches urls of a determinated tournament and day
 
     urls.push(...await scrapeUrls({
@@ -46,8 +46,8 @@ const run = async ({ browser, options, days, state, tournaments, types }): Promi
   } catch (e) {
     debug(e)
   } finally {
+    await page.close()
     return matches
-    // await browser.close()
   }
 
 }

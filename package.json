@@ -5,12 +5,16 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index "
+    "start": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index ",
+    "scrape": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index ",
+    "group": "DEBUG=grouper:*  ts-node -r tsconfig-paths/register src/index ",
+    "check": "DEBUG=checker:*  ts-node -r tsconfig-paths/register src/index "
   },
   "dependencies": {
     "@types/js-combinatorics": "^0.5.29",
     "@types/lowdb": "^1.0.0",
     "@types/puppeteer": "^1.2.0",
+    "@types/ramda": "^0.25.21",
     "@types/yamljs": "^0.2.30",
     "assert": "^1.4.1",
     "async-parallel": "^1.2.3",
@@ -24,6 +28,7 @@
     "mobx": "^4.1.0",
     "moment": "^2.21.0",
     "puppeteer": "^1.2.0",
+    "ramda": "^0.25.0",
     "rxjs": "^5.5.7",
     "yaml": "^0.3.0",
     "yamljs": "^0.3.0"

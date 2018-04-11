@@ -35,7 +35,12 @@ const run = async ({ browser, options, days, state, tournaments, types }): Promi
         types
       }))
     ).then(arr => arr.reduce((acc, curr) => acc.concat(curr), []))
-  } catch (e) { debug(e) }
+  } catch (e) {
+    debug(e)
+  } finally {
+    await page.close()
+    return matches
+  }
 
   /*
 const matches: Match[] = await scrapeMatch({
@@ -43,9 +48,7 @@ const matches: Match[] = await scrapeMatch({
   url: urls[0],
   types: ["Over/Under 2.5 Goal"]
 })*/
-  // await browser.close()
 
-  return matches
 
 }
 
