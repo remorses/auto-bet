@@ -5,7 +5,7 @@ import * as Debug from "debug";
 const debug = Debug("scraper:eurobet");
 
 const LINK = ""
-const SITE = "eurobet"
+const SITE = 'eurobet'
 const SPORT = "soccer"
 
 const removeTrash = arr => !arr ? Boolean(arr) : (arr[0] && arr.length)
@@ -15,12 +15,12 @@ const getOdds = (type, betDescription, oddGroupList) => {
   return oddGroupList.map(({ oddGroupDescription, oddList }) => {
 
     if (oddGroupDescription === betDescription) {
-      if (type === rawToPure("oddType", betDescription, "eurobet")) {
+      if (type === rawToPure("oddType", betDescription, SITE)) {
         return oddList.map(obj => getOdd(type, obj))
       }
     } else {
       const rawType = betDescription + "_" + oddGroupDescription
-      if (type === rawToPure("oddType", rawType, "eurobet")) {
+      if (type === rawToPure("oddType", rawType, SITE)) {
         return oddList.map(obj => getOdd(type, obj))
       }
     }
@@ -29,7 +29,7 @@ const getOdds = (type, betDescription, oddGroupList) => {
 
 // from oddList
 const getOdd = (type, { oddDescription, oddValue }) => {
-  const getRole = rawToPure("role", oddDescription, "eurobet")
+  const getRole = rawToPure("role", oddDescription, SITE)
   const getValue = oddValue * Math.pow(10, 1 - 3)
   return {
     type: type,
@@ -45,7 +45,7 @@ const getMetadata = (type, { teamAway, teamHome, meetingDescription }) => {
   const matchName = teamAway.description + ", " + teamHome.description
   return {
     sport: SPORT,
-    tournament: rawToPure("tournament", meetingDescription, "eurobet"),
+    tournament: rawToPure("tournament", meetingDescription, SITE),
     matchName,
     date: "",
     time: "",
@@ -7060,6 +7060,6 @@ const input = {
   }
 }
 
-const result = getMatch("1X2 handicap_0:2", input)
+const result = getMatch("1X2 handicap_0:3", input)
 
 debug(result)
