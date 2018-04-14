@@ -3,7 +3,7 @@
 import { aliases } from "./aliases"
 
 type Category = "oddType" | "role" | "tournament" | "dayNumber" | "dayWord" | "monthWord";
-type Site = "williamhill" | "betfair";
+type Site = "williamhill" | "betfair" | "eurobet";
 
 
 const rawToPure = (category: Category, raw: string, site?: Site, ): string => {

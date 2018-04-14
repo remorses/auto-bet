@@ -13,7 +13,8 @@ export const aliases = {
     },
     "goal_yesNo": {
       betfair: "Mercati Segnano entrambe le squadre",
-      williamhill: "Segneranno Entrambe le Squadre?"
+      williamhill: "Segneranno Entrambe le Squadre?",
+      eurobet: 'GG/NG',
     },
     'handicapCorners_["-1","+2"]': { betfair: "Handicap calci d'angolo", williamhill: "Corner con Handicap" },
     'handicapCorners_["-2","+3"]': { betfair: "Handicap calci d'angolo", williamhill: "Corner con Handicap" },
@@ -23,7 +24,7 @@ export const aliases = {
     'handicapCorners_["+3","-2"]': { betfair: "Handicap calci d'angolo", williamhill: "Corner con Handicap" },
     'handicapCorners_["+4","-3"]': { betfair: "Handicap calci d'angolo", williamhill: "Corner con Handicap" },
     'handicapCorners_["+5","-4"]': { betfair: "Handicap calci d'angolo", williamhill: "Corner con Handicap" },
-    "rigore_yesNo": { betfair: "Rigore Si/No", williamhill: "Rigore Si/No" },
+    "rigore_yesNo": { betfair: "Rigore Si/No", williamhill: "Rigore Si/No", eurobet: "rigore?" },
   },
   "tournament": {
     "serie A": {
@@ -48,8 +49,8 @@ export const aliases = {
     "+5.5": { williamhill: "Over 5.5", betfair: "Over 5.5" },
     "+6.5": { williamhill: "Over 6.5", betfair: "Over 6.5" },
     "+7.5": { williamhill: "Over 7.5", betfair: "Over 7.5" },
-    "yes": { betfair: "Sì", williamhill: "Si" },
-    "no": { betfair: "No", williamhill: "No" }
+    "yes": { betfair: "Sì", williamhill: "Si", eurobet: "Si"},
+    "no": { betfair: "No", williamhill: "No", eurobet: "No" },
   },
   "dayWord": {
     "sabato": {
@@ -103,8 +104,4 @@ export const aliases = {
       williamhill: "Mag"
     },
   }
-}
-
-export const typesNRoles = {
-""
 }
