@@ -2,6 +2,7 @@
 import * as R from "ramda"
 import { rawToPure, pureToRaw } from "@aliases/index"
 import * as Debug from "debug";
+import { Match, Metadata, Odd, } from "@src/interfaces"
 const debug = Debug("scraper:eurobet:getMatch");
 
 const LINK = ""
@@ -55,7 +56,7 @@ const getMetadata = (type, { teamAway, teamHome, meetingDescription }) => {
 }
 
 // from betGroupList
-export const getMatch = (type, data) => {
+export const getMatch = (type, data): Match => {
   const betGroupList: any = R.path(["result", "betGroupList"], data)
   const eventInfo: any = R.path(["result", "eventInfo"], data)
   const metadata = getMetadata(type, eventInfo)

@@ -20,7 +20,8 @@
       "@placer/*": ["./src/placer/*"],
       "@aliases/*": ["./src/aliases/*"],
       "@williamhill/*": ["./src/scraper/williamhill/*"],
-      "@betfair/*": ["./src/scraper/betfair/*"]
+      "@betfair/*": ["./src/scraper/betfair/*"],
+      "@eurobet/*": ["./src/scraper/eurobet/*"]
     }
 
   }

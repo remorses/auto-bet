@@ -19,7 +19,7 @@ const adapter = new FileSync('./src/db.json');
 })*/
 
 const options = {
-  width: 1000,
+  width: 300,
   height: 1000
 };
 
@@ -39,33 +39,41 @@ const run = async () => {
 
   const williamhill = await import("@williamhill/index")
   const betfair = await import("@betfair/index")
+  const eurobet = await import("@eurobet/index")
 
 
   let scraperQueue: Match[] = await Promise.all(
-    [
+    [/*await eurobet.run({
+      browser,
+      options,
+      days: "*",
+      state: "Italia",
+      tournaments: ["Serie A"],
+      types: ["1X2 + Multigoal 1-3", "U/O 2.5", "somma goal"]
+    }),
+    await williamhill.run({
+      browser,
+      options,
+      days: "*",
+      state: "Italia",
+      tournaments: ["Serie A"],
+      types: ["underOver_2.5", "underOver_1.5", "rigore_yesNo", "goal_yesNo", 'handicapCorners_["-4","+5"]']
+    }),*/
+    await betfair.run({
+      browser,
+      options,
+      days: "*",
+      state: "Italia",
+      tournaments: ["Italia - Serie A"],
+      types: ["underOver_2.5", "underOver_1.5", "rigore_yesNo", "goal_yesNo", 'handicapCorners_["-4","+5"]']
+    }),
 
-      await williamhill.run({
-        browser,
-        options,
-        days: "*",
-        state: "Italia",
-        tournaments: ["Serie A"],
-        types: ["underOver_2.5", "underOver_1.5", "rigore_yesNo", "goal_yesNo", 'handicapCorners_["-4","+5"]']
-      }),
-      await betfair.run({
-        browser,
-        options,
-        days: "*",
-        state: "Italia",
-        tournaments: ["Italia - Serie A"],
-        types: ["underOver_2.5", "underOver_1.5", "rigore_yesNo", "goal_yesNo", 'handicapCorners_["-4","+5"]']
-      }),
     ]
   ).then(arr => arr.reduce((a, b) => a.concat(b)))
 
 
 
-  console.log(JSON.stringify(scraperQueue))
+  debug(scraperQueue)
   // Set some defaults (required if your JSON file is empty)
   const db = low(adapter);
 
@@ -86,7 +94,8 @@ const run = async () => {
 
     db.get('outputs')
       .push(...scraperQueue)
-      .write()*/
+      .write()
+      */
 
   if (scraperQueue.length > 0) {
     db.get("scraperQueue")

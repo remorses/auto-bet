@@ -9,7 +9,7 @@
     "scrape": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index ",
     "group": "DEBUG=grouper:*  ts-node -r tsconfig-paths/register src/index ",
     "check": "DEBUG=checker:*  ts-node -r tsconfig-paths/register src/index ",
-    "eurobet": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/scraper/eurobet/index ",
+     "eurobet": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/scraper/eurobet/index ",
     "sisal": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/scraper/sisal "
   },
   "dependencies": {

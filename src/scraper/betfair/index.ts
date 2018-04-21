@@ -14,7 +14,7 @@ const debug = Debug("scraper:betfair:index");
 const run = async ({ browser, options, days, state, tournaments, types }): Promise<Match[]> => {
   let matches: Match[] = []
   const page = await browser.newPage();
-  await page.setViewport({ width: options.width, height: options.height });
+  await page.setViewport({ width: 1000, height: 1000 });
   await abortMediaRequests(page)
   const urls: string[] = []
   try {

@@ -13,7 +13,7 @@ import * as Debug from "debug";
 const debug = Debug("scraper:eurobet:index");
 
 // XXX main logic
-export const run = async ({ browser, options, days, state, tournaments, types }): Promise<any[]> => {
+export const run = async ({ browser, options, days, state, tournaments, types }): Promise<Match[]> => {
   const page = await browser.newPage();
   await page.setViewport({ width: options.width, height: options.height });
   //await abortMediaRequests(page)
@@ -48,28 +48,3 @@ types: ["1X2 + Multigoal 1-3","U/O 2.5", "somma goal" ]
   // await page.close()
   return matches
 }
-
-
-
-(async () => {
-  const options = {
-    width: 300,
-    height: 1000
-  };
-  const browser = await launch({
-    headless: false,
-    args: [
-      `--window-size=${options.width},${options.height}`
-    ],
-  });
-
-  const matches = await run({
-    browser,
-    options,
-    days: "*",
-    state: "Italia",
-    tournaments: ["Serie A"],
-    types: ["1X2 + Multigoal 1-3","U/O 2.5", "somma goal" ]
-  })
-  debug(matches)
-})()

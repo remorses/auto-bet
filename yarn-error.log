@@ -21,12 +21,18 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "build": "tsc",
-      "start": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index " // 2> output.txt
+      "start": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index ",
+      "scrape": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index ",
+      "group": "DEBUG=grouper:*  ts-node -r tsconfig-paths/register src/index ",
+      "check": "DEBUG=checker:*  ts-node -r tsconfig-paths/register src/index ",
+      // "eurobet": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/scraper/eurobet/index ",
+      "sisal": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/scraper/sisal "
     },
     "dependencies": {
       "@types/js-combinatorics": "^0.5.29",
       "@types/lowdb": "^1.0.0",
       "@types/puppeteer": "^1.2.0",
+      "@types/ramda": "^0.25.21",
       "@types/yamljs": "^0.2.30",
       "assert": "^1.4.1",
       "async-parallel": "^1.2.3",
@@ -34,10 +40,13 @@ npm manifest:
       "dotenv": "^5.0.1",
       "fs": "^0.0.1-security",
       "js-combinatorics": "^0.5.3",
+      "json2yaml": "^1.1.0",
       "lodash": "^4.17.5",
       "lowdb": "^1.0.0",
       "mobx": "^4.1.0",
-      "puppeteer": "^1.1.0",
+      "moment": "^2.21.0",
+      "puppeteer": "^1.2.0",
+      "ramda": "^0.25.0",
       "rxjs": "^5.5.7",
       "yaml": "^0.3.0",
       "yamljs": "^0.3.0"
@@ -84,6 +93,10 @@ Lockfile:
     dependencies:
       "@types/events" "*"
       "@types/node" "*"
+  
+  "@types/ramda@^0.25.21":
+    version "0.25.21"
+    resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.25.21.tgz#3399ac49ea99253c7c308916960b65058a1d63c4"
   
   "@types/yamljs@^0.2.30":
     version "0.2.30"
@@ -244,6 +257,12 @@ Lockfile:
     version "0.5.3"
     resolved "https://registry.yarnpkg.com/js-combinatorics/-/js-combinatorics-0.5.3.tgz#5da5a1c4632ec59fdf8d49dccfe59ef088122b15"
   
+  json2yaml@^1.1.0:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/json2yaml/-/json2yaml-1.1.0.tgz#5414d907f9816586b80c513ec2e3aeb2ab819a6c"
+    dependencies:
+      remedial "1.x"
+  
   lodash@4, lodash@^4.17.5:
     version "4.17.5"
     resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
@@ -282,6 +301,10 @@ Lockfile:
     version "4.1.0"
     resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.1.0.tgz#e4a9679cdafbe215b20e32ef93a7031845b3f1af"
   
+  moment@^2.21.0:
+    version "2.21.0"
+    resolved "https://registry.yarnpkg.com/moment/-/moment-2.21.0.tgz#2a114b51d2a6ec9e6d83cf803f838a878d8a023a"
+  
   ms@2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -316,9 +339,9 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.0.0.tgz#33c50398f70ea7eb96d21f7b817630a55791c7ee"
   
-  puppeteer@^1.1.0:
-    version "1.1.1"
-    resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-1.1.1.tgz#adbf25e49f5ef03443c10ab8e09a954ca0c7bfee"
+  puppeteer@^1.2.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/puppeteer/-/puppeteer-1.2.0.tgz#6a8a1c618af073dfcf6fc7c7e3c12e54129ffa98"
     dependencies:
       debug "^2.6.8"
       extract-zip "^1.6.5"
@@ -328,6 +351,10 @@ Lockfile:
       proxy-from-env "^1.0.0"
       rimraf "^2.6.1"
       ws "^3.0.0"
+  
+  ramda@^0.25.0:
+    version "0.25.0"
+    resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
   
   readable-stream@^2.2.2:
     version "2.3.5"
@@ -340,6 +367,10 @@ Lockfile:
       safe-buffer "~5.1.1"
       string_decoder "~1.0.3"
       util-deprecate "~1.0.1"
+  
+  remedial@1.x:
+    version "1.0.7"
+    resolved "https://registry.yarnpkg.com/remedial/-/remedial-1.0.7.tgz#d6674413a65676007be00dd400980987b2c300c1"
   
   rimraf@^2.6.1:
     version "2.6.2"
@@ -441,7 +472,7 @@ Lockfile:
       fd-slicer "~1.0.1"
 
 Trace: 
-  SyntaxError: /Users/morse/Documents/GitHub/auto-bet/package.json: Unexpected token / in JSON at position 197
+  SyntaxError: /Users/morse/Documents/GitHub/auto-bet/package.json: Unexpected token / in JSON at position 440
       at JSON.parse (<anonymous>)
       at /usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:770:59
       at Generator.next (<anonymous>)

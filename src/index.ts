@@ -20,8 +20,8 @@ const db = low(adapter);
 
 
   await scraper.run()
-  await grouper.run()
-  await checker.run()
+  // await grouper.run()
+  // await checker.run()
   // await placer.run()
 
 })()
