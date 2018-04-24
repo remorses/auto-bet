@@ -44,14 +44,14 @@ const run = async () => {
 
 
   let scraperQueue: Match[] = await Promise.all(
-    [await eurobet.run({
+    [/*await eurobet.run({
       browser,
       options,
       days: "*",
       state: "Italia",
       tournaments: ["Serie A"],
       types: ["rigore_yesNo", "ris esatto"]
-    }),/*
+    }),
     await williamhill.run({
       browser,
       options,
@@ -59,7 +59,7 @@ const run = async () => {
       state: "Italia",
       tournaments: ["Serie A"],
       types: ["underOver_2.5", "underOver_1.5", "rigore_yesNo", "goal_yesNo", 'handicapCorners_["-4","+5"]']
-    }),*/
+    }),
     await betfair.run({
       browser,
       options,
@@ -67,13 +67,13 @@ const run = async () => {
       state: "Italia",
       tournaments: ["Italia - Serie A"],
       types: ["rigore_yesNo", ...handicaps]
-    }),
+    }),*/
     await sisal.run({
       browser,
       options,
       days: "*",
       tournaments: ["ITA Serie A"],
-      types: ["rigore_yesNo", "rigore_yesNo"]
+      types: ["rigore_yesNo","goal_yesNo" ]
     }),
     ]
   ).then(arr => arr.reduce((a, b) => a.concat(b)))

@@ -1,9 +1,9 @@
 
 import * as R from "ramda"
 import { rawToPure, pureToRaw } from "@aliases/index"
-import { Match } from "@src/interfaces"
+import { Match, Odd } from "@src/interfaces"
 import * as Debug from "debug";
-const debug = Debug("scraper:eurobet");
+const debug = Debug("scraper:sisal");
 
 const LINK = ""
 const SITE = "sisal"
@@ -12,8 +12,9 @@ const SPORT = "soccer"
 export const removeTrash = arr => !arr ? Boolean(arr) : (arr[0] && arr.length)
 
 // from infoAggList[]
-const getOdds = (type, descrizioneScommessa, infoAggList) => {
+const getOdds  = (type, descrizioneScommessa, infoAggList) => {
   return infoAggList.map(({ descrizione, esitoList }) => {
+
     if (type === rawToPure("oddType", descrizione, SITE)) {
       return esitoList.map(obj => getOdd(type, obj))
     }

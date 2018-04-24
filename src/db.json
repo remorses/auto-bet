@@ -1,1 +1,237 @@
-{}
+{
+  "scraperQueue": [
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Roma - Chievo Verona",
+        "date": "Apr 28, 2018 6:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Roma - Chievo Verona",
+        "date": "Apr 28, 2018 6:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Inter - Juventus",
+        "date": "Apr 28, 2018 8:45:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Crotone - Sassuolo",
+        "date": "Apr 29, 2018 12:30:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Sampdoria - Cagliari",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Atalanta - Genoa",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Bologna - Milan",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Hellas Verona - Spal",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Benevento - Udinese",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "ACF Fiorentina - Napoli",
+        "date": "Apr 29, 2018 6:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Torino - Lazio",
+        "date": "Apr 29, 2018 8:45:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Roma - Chievo Verona",
+        "date": "Apr 28, 2018 6:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Inter - Juventus",
+        "date": "Apr 28, 2018 8:45:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Crotone - Sassuolo",
+        "date": "Apr 29, 2018 12:30:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Sampdoria - Cagliari",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Atalanta - Genoa",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Bologna - Milan",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Hellas Verona - Spal",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Benevento - Udinese",
+        "date": "Apr 29, 2018 3:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "ACF Fiorentina - Napoli",
+        "date": "Apr 29, 2018 6:00:00 PM",
+        "time": ""
+      },
+      "odds": []
+    },
+    {
+      "site": "sisal",
+      "metadata": {
+        "sport": "soccer",
+        "tournament": "ITA Serie A",
+        "matchName": "Torino - Lazio",
+        "date": "Apr 29, 2018 8:45:00 PM",
+        "time": ""
+      },
+      "odds": []
+    }
+  ],
+  "grouperQueue": [],
+  "checkerQueue": []
+}
