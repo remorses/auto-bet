@@ -8,7 +8,7 @@ import * as YAML from 'json2yaml'
 import * as Parallel from "async-parallel"
 import * as Debug from "debug";
 const debug = Debug("scraper:index");
-
+import { handicaps } from "@aliases/aliases"
 const adapter = new FileSync('./src/db.json');
 
 
@@ -19,7 +19,7 @@ const adapter = new FileSync('./src/db.json');
 })*/
 
 const options = {
-  width: 300,
+  width: 400,
   height: 1000
 };
 
@@ -43,14 +43,14 @@ const run = async () => {
 
 
   let scraperQueue: Match[] = await Promise.all(
-    [/*await eurobet.run({
+    [await eurobet.run({
       browser,
       options,
       days: "*",
       state: "Italia",
       tournaments: ["Serie A"],
-      types: ["1X2 + Multigoal 1-3", "U/O 2.5", "somma goal"]
-    }),
+      types: ["rigore_yesNo", "ris esatto"]
+    }),/*
     await williamhill.run({
       browser,
       options,
@@ -59,15 +59,15 @@ const run = async () => {
       tournaments: ["Serie A"],
       types: ["underOver_2.5", "underOver_1.5", "rigore_yesNo", "goal_yesNo", 'handicapCorners_["-4","+5"]']
     }),*/
-    await betfair.run({
-      browser,
-      options,
-      days: "*",
-      state: "Italia",
-      tournaments: ["Italia - Serie A"],
-      types: ["underOver_2.5", "underOver_1.5", "rigore_yesNo", "goal_yesNo", 'handicapCorners_["-4","+5"]']
-    }),
-
+      await betfair.run({
+        browser,
+        options,
+        days: "*",
+        state: "Italia",
+        tournaments: ["Italia - Serie A"],
+        types: ["rigore_yesNo", ...handicaps]
+      }),
+      // "underOver_2.5", "underOver_1.5",
     ]
   ).then(arr => arr.reduce((a, b) => a.concat(b)))
 

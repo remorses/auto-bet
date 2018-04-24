@@ -5,7 +5,8 @@ import { rawToPure, pureToRaw } from "@aliases/index"
 import {
   findParentElement,
   waitForLoad,
-  logger
+  logger,
+  resolveIf,
 } from "@scraper/helpers"
 import { singleLine, handicapCorners, goalNoGoal, underOvers } from "./scrapeCases"
 
@@ -24,13 +25,15 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
   let matches: Match[] = []
   // await waitForLoad(page)
 
+  try {
 
-  await page.waitForSelector("div#zone-rightcolumn a:nth-child(3).market-link").then(a => a.click())
-  await waitForLoad(page)
+    await page.$("div#zone-rightcolumn a:nth-child(3).market-link")
+      .then(resolveIf)
+      .then(a => a.click())
+    await waitForLoad(page)
 
-  await Promise.all(types.map(async (type: string) => {
+    await Promise.all(types.map(async (type: string) => {
 
-    try {
       // debug(pureToRaw("oddType", type, "betfair"))
       const matchTable = await findParentElement({
         page,
@@ -78,13 +81,17 @@ async function scrapeMatch({ browser, url, types }: { browser: Browser, url: str
 
 
       }
-    } catch (e) {
-      debug(e)
-    }
 
-  }))
+
+    }))
+  } catch (e) {
+    debug(Error(e))
+  }
+  await page.close()
   return matches
 }
+
+
 
 
 export { scrapeMatch }

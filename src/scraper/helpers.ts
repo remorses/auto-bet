@@ -148,7 +148,7 @@ export const logger = (text) => (a) => {
 export const resolveIf = async (bool: any) => {
   if (bool) { return bool }
   else {
-    setTimeout(async () => { return bool }, 800)
+    setTimeout(async () =>  bool , 800)
   }
 }
 

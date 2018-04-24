@@ -9,13 +9,13 @@
     "scrape": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/index ",
     "group": "DEBUG=grouper:*  ts-node -r tsconfig-paths/register src/index ",
     "check": "DEBUG=checker:*  ts-node -r tsconfig-paths/register src/index ",
-     "eurobet": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/scraper/eurobet/index ",
+    "eurobet": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/scraper/eurobet/index ",
     "sisal": "DEBUG=scraper:*  ts-node -r tsconfig-paths/register src/scraper/sisal "
   },
   "dependencies": {
     "@types/js-combinatorics": "^0.5.29",
     "@types/lowdb": "^1.0.0",
-    "@types/puppeteer": "^1.2.0",
+    "@types/puppeteer": "^1.2.1",
     "@types/ramda": "^0.25.21",
     "@types/yamljs": "^0.2.30",
     "assert": "^1.4.1",

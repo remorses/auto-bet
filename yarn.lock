@@ -24,9 +24,9 @@
   version "9.4.7"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.7.tgz#57d81cd98719df2c9de118f2d5f3b1120dcd7275"
 
-"@types/puppeteer@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.2.0.tgz#99f1c05115e98254dacab856851878aba643cbde"
+"@types/puppeteer@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-1.2.1.tgz#00d663f0d6a4f9b472094c18414a00a4ea925655"
   dependencies:
     "@types/events" "*"
     "@types/node" "*"

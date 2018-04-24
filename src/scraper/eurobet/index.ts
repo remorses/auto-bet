@@ -33,7 +33,8 @@ export const run = async ({ browser, options, days, state, tournaments, types })
     scrapeMatch({
       browser,
       url,
-      types
+      types,
+      options
     }))).then(arr => arr.reduce((acc, curr) => acc.concat(curr), []))
 
   /*

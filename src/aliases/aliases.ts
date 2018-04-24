@@ -2,7 +2,7 @@ export const aliases = {
   "oddType": {
     "underOver_0.5": { betfair: "Più/Meno", williamhill: "Over/Under 0.5 Goal" },
     "underOver_1.5": { betfair: "Più/Meno", williamhill: "Over/Under 1.5 Goal" },
-    "underOver_2.5": { betfair: "Più/Meno", williamhill: "Over/Under 2.5 Goal" },
+    "underOver_2.5": { betfair: "Più/Meno", williamhill: "Over/Under 2.5 Goal", eurobet: "U/O 2.5" },
     "underOver_3.5": { betfair: "Più/Meno", williamhill: "Over/Under 3.5 Goal" },
     "underOver_4.5": { betfair: "Più/Meno", williamhill: "Over/Under 4.5 Goal" },
     "underOver_5.5": { betfair: "Più/Meno", williamhill: "Over/Under 5.5 Goal" },
@@ -105,3 +105,15 @@ export const aliases = {
     },
   }
 }
+
+
+
+export const handicaps = [
+  'handicapCorners_["-1","+2"]',
+  'handicapCorners_["-2","+3"]',
+  'handicapCorners_["-3","+4"]',
+  'handicapCorners_["-4","+5"]',
+  'handicapCorners_["+2","-1"]',
+  'handicapCorners_["+3","-2"]',
+  'handicapCorners_["+4","-3"]',
+  'handicapCorners_["+5","-4"]',]
