@@ -63,7 +63,7 @@ export const getMatch = (type, data): Match => {
   const odds = betGroupList
     .map(({ betDescription, oddGroupList }) =>
       getOdds(type, betDescription, oddGroupList))
-    //.filter(removeTrash)
+    .filter(removeTrash)
 
   return {
     site: SITE,

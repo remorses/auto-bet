@@ -21,7 +21,8 @@
       "@aliases/*": ["./src/aliases/*"],
       "@williamhill/*": ["./src/scraper/williamhill/*"],
       "@betfair/*": ["./src/scraper/betfair/*"],
-      "@eurobet/*": ["./src/scraper/eurobet/*"]
+      "@eurobet/*": ["./src/scraper/eurobet/*"],
+      "@sisal/*": ["./src/scraper/sisal/*"]
     }
 
   }

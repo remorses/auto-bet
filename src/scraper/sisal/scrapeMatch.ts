@@ -21,7 +21,7 @@ function waitData(page: Page): Promise<any> {
         && req.resourceType() === "xhr"
       ) {
         const payload: Object = await res.json()
-        if (payload.hasOwnProperty("result")) resolve(payload)
+        if (payload.hasOwnProperty("scommesseClassicheList")) resolve(payload)
       }
     })
   }))
@@ -38,13 +38,7 @@ async function scrapeMatch({ browser, url, types, options }: { browser: Browser,
   try {
 
 
-    // await page.waitForSelector("div.filtri-sport > div > ul > li:nth-child(12) > a")
-    await findElement({
-      page,
-      content: "TUTTE",
-      selector: "div.filtri-sport > div > ul > li > a"
-    }).then(resolveIf)
-      .then(a => a.click())
+
 
     const data = await waitData(page)
     // debug(data)
@@ -52,14 +46,15 @@ async function scrapeMatch({ browser, url, types, options }: { browser: Browser,
 
 
 
-    const matches = await Promise.all(
+    const matches: Match[] = await Promise.all(
       types.map(
-         type => getMatch(type, data)
+        type => getMatch(type, data)
       ))
     await page.close()
     debug(matches)
 
     return matches
+
   } catch (e) { debug(Error(e)); return [] }
   //.filter(removeTrash)
 }

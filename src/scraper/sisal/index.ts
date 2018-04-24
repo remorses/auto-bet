@@ -13,7 +13,7 @@ import * as Debug from "debug";
 const debug = Debug("scraper:eurobet:index");
 
 // XXX main logic
-export const run = async ({ browser, options, days, state, tournaments, types }): Promise<Match[]> => {
+export const run = async ({ browser, options, days,  tournaments, types }): Promise<Match[]> => {
   const page = await browser.newPage();
   await page.setViewport({ width: options.width, height: options.height });
   //await abortMediaRequests(page)
@@ -23,9 +23,8 @@ export const run = async ({ browser, options, days, state, tournaments, types })
   const urls = await scrapeUrls({
     page,
     days,
-    state,
     tournaments,
-    site: "https://www.eurobet.it/it/scommesse/#!/calcio",
+    site: "https://www.sisal.it/scommesse-matchpoint",
   })
 
 

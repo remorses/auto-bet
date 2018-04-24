@@ -1,6 +1,7 @@
 
 import * as R from "ramda"
 import { rawToPure, pureToRaw } from "@aliases/index"
+import { Match } from "@src/interfaces"
 import * as Debug from "debug";
 const debug = Debug("scraper:eurobet");
 
@@ -8,7 +9,7 @@ const LINK = ""
 const SITE = "sisal"
 const SPORT = "soccer"
 
-const removeTrash = arr => !arr ? Boolean(arr) : (arr[0] && arr.length)
+export const removeTrash = arr => !arr ? Boolean(arr) : (arr[0] && arr.length)
 
 // from infoAggList[]
 const getOdds = (type, descrizioneScommessa, infoAggList) => {
@@ -49,7 +50,7 @@ const getMetadata = (type, {
 }
 
 // from data
-export const getMatch = (type, data) => {
+export const getMatch = (type, data): Match => {
   const scommesseClassicheList: any = R.path(["scommesseClassicheList"], data)
   const metadata = getMetadata(type, data)
   const odds = scommesseClassicheList

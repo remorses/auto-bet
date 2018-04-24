@@ -24,7 +24,7 @@ import * as Debug from "debug";
 const debug = Debug("scraper:eurobet:scrapeUrls");
 
 
-async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page, site, days: string[] | "*", state, tournaments: string[] }): Promise<string[]> {
+async function scrapeUrls({ page, site, days, tournaments }: { page: Page, site, days: string[] | "*", tournaments: string[] }): Promise<string[]> {
   let hrefs: string[] = []
   try {  // go to football
     for (let tournament of tournaments) {
@@ -36,36 +36,25 @@ async function scrapeUrls({ page, site, days, state, tournaments }: { page: Page
       // go to state
 
 
-      await page.$("div#sidebar-sticky-wrapper div.hide-scroll-bar > ul > li:nth-child(2) > a > img ")
+      await page.$("div#p_p_id_AlberaturaAntepost_WAR_scommesseportlet_ div.items > div > div > div:nth-child(1) > a")
         .then(resolveIf)
         .then(a => a.click())
 
       // await waitForLoad(page)
       // "div > li:nth-child(4) > a > h4"
-      const stateTable = await findParentElement({
-        page,
-        content: state,
-        child: "  a > h4",
-        parent: "div > li"
-      })//.then(a => a.click())
-      // await waitForLoad(page)
-
-      // "li:nth-child(4) > ul > li:nth-child(1) > a > h4"
-
-      await findElementFromElement({
+      const stateTable = await findElement({
         page,
         content: tournament,
-        selector: "ul > li > a > h4",
-        element: stateTable
-      })
-        .then(resolveIf)
+        selector: "div.event > a "
+      }).then(resolveIf)
         .then((a) => a.click())
 
+      await page.waitForNavigation()
       // get the links of matches
       await waitForLoad(page)
-      // "div > div.anti-row > div > div.event-row > div.event-wrapper-info > div.event-players > a"
+
       if (days === "*") {
-        const links = await page.$$("div > div.anti-row > div > div.event-row > div.event-wrapper-info > div.event-players > a").catch(debug)
+        const links = await page.$$(" div.event> div.detail > p.name > a")
         hrefs.push(... await Promise.all(links.map(link => link.getProperty("href").then(href => href.jsonValue()))))
       } else {
         for (let day of days) {

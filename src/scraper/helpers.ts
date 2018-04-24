@@ -120,7 +120,7 @@ export const findElementFromElement = async ({ page, content, selector, element 
 
 
 export const getContent = async (element: ElementHandle): Promise<string> => {
-  const inner = await  element.getProperty("innerHTML")
+  const inner = await  element.getProperty("textContent")
   if (!inner) throw new Error(`can't proceed getContent, no inner`)
   return (await inner.jsonValue()).trim()
 }

@@ -57,7 +57,7 @@ async function scrapeMatch({ browser, url, types, options }: { browser: Browser,
          type => getMatch(type, data)
       ))
     await page.close()
-    debug(matches)
+    // debug(matches)
 
     return matches
   } catch (e) { debug(Error(e)); return [] }
